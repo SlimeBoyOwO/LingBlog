@@ -1,0 +1,89 @@
+@import 'tailwindcss';
+
+body {
+  background-color: #050509;
+  color: #e2e8f0;
+  overflow-x: hidden;
+}
+
+/* 隐藏滚动条 */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #1e293b;
+}
+::-webkit-scrollbar-thumb {
+  background: #01e1ff;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #35e1ff;
+}
+
+/* 玻璃拟态卡片 */
+.glass-panel {
+  background: rgba(20, 20, 25, 0.4);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* 霓虹文字效果 */
+.text-glow {
+  text-shadow: 0 0 20px rgba(0, 242, 255, 0.3);
+}
+
+@theme {
+  /* 字体配置 */
+  /* --font-sans: 'Inter', 'sans-serif'; */
+  /* --font-display: 'Space Grotesk', 'sans-serif'; */
+
+  /* 颜色配置 */
+  --color-void: #0e1517;
+  --color-glass: rgba(255, 255, 255, 0.03);
+  --color-glass-border: rgba(255, 255, 255, 0.08);
+  --color-cyan-glow: #00f2ff;
+  --color-purple-glow: #bd00ff;
+
+  /* 动画配置 */
+  --animate-blob: blob 7s infinite;
+  --animate-fade-in-up: fadeInUp 0.8s ease-out forwards;
+}
+
+@keyframes blob {
+  0% {
+    transform: translate(0px, 0px) scale(1);
+  }
+  33% {
+    transform: translate(30px, -50px) scale(1.1);
+  }
+  66% {
+    transform: translate(-20px, 20px) scale(0.9);
+  }
+  100% {
+    transform: translate(0px, 0px) scale(1);
+  }
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 设置深色模式 */
+@custom-variant dark (&:where(.dark, .dark *));

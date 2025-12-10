@@ -1,0 +1,75 @@
+@import 'tailwindcss';
+@import '../../../../public/font/Blueaka/Blueaka.css';
+@import '../../../../public/font/Blueaka_Bold/Blueaka_Bold.css';
+
+@theme {
+  /* 字体配置 */
+  --font-sans: 'Blueaka', -apple-system, BlinkMacSystemFont, 'Microsoft YaHei', sans-serif;
+  --font-mono: 'Blueaka', -apple-system, BlinkMacSystemFont, 'Microsoft YaHei', sans-serif;
+  --font-weight-bold: 700;
+
+  /* 颜色配置 */
+  --color-void: #0e1517;
+  --color-brand: var(--vp-c-brand-1);
+  --color-glass: rgba(255, 255, 255, 0.03);
+  --color-glass-border: rgba(255, 255, 255, 0.08);
+  --color-cyan-glow: #00f2ff;
+  --color-purple-glow: #bd00ff;
+
+  --color-page-bg: oklch(0.16 0.014 260);
+  --color-card-bg: oklch(0.23 0.015 260);
+
+  /* 动画配置 */
+  --animate-blob: blob 7s infinite;
+  --animate-fade-in-up: fadeInUp 0.8s ease-out forwards;
+}
+
+/* 全局样式 - 现在可以在 @layer base 中定义 */
+@layer base {
+  html {
+    font-family: var(--font-sans);
+    scroll-behavior: var(--scroll-behavior);
+  }
+
+  .dark {
+    color-scheme: dark;
+  }
+}
+
+@layer components {
+  .header-decoration {
+    @apply relative pl-4 before:absolute before:left-0 before:top-1/2 before:-translate-y-1/2 before:w-1 before:h-[70%] before:bg-brand before:rounded-md;
+  }
+}
+
+/* 隐藏滚动条 */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #1e293b;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--vp-c-brand-1);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--vp-c-brand-2);
+}
+
+.page-bg {
+  background-color: oklch(0.16 0.014 260);
+}
+
+.card-base {
+  width: 100%;
+  background-color: oklch(0.23 0.015 260);
+  padding: 1.5rem;
+  border-radius: 0.75rem;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  flex-shrink: 0;
+}
+
+.border-brand {
+  border-color: var(--vp-c-brand-2);
+}
