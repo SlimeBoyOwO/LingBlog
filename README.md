@@ -1,48 +1,55 @@
-# ling-web
+# LingBlog - 一款以二次元，圆润风格为主的个人博客
 
-This template should help get you started developing with Vue 3 in Vite.
+因为感觉博客模版太多，还是想自己开发一个来玩玩，于是就有了这个项目。目前还在施工中ing...
 
-## Recommended IDE Setup
+## 博客特点
 
-[VS Code](https://code.visualstudio.com/) + [Vue (Official)](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+- [x] 二次元风格
+- [x] 主页，博客分离
+- [x] 星空样式，青色主题
+- [x] 卡片式博客展示
+- [x] 个人项目，绘画作品展示
 
-## Recommended Browser Setup
+## 技术栈
 
-- Chromium-based browsers (Chrome, Edge, Brave, etc.):
-  - [Vue.js devtools](https://chromewebstore.google.com/detail/vuejs-devtools/nhdogjmejiglipccpnnnanhbledajbpd) 
-  - [Turn on Custom Object Formatter in Chrome DevTools](http://bit.ly/object-formatters)
-- Firefox:
-  - [Vue.js devtools](https://addons.mozilla.org/en-US/firefox/addon/vue-js-devtools/)
-  - [Turn on Custom Object Formatter in Firefox DevTools](https://fxdx.dev/firefox-devtools-custom-object-formatters/)
+- Vue3
+- Vue Router
+- Pinia
+- Vitepress
+- Tailwind Css
+- TypeScript
+- Vite
+- ESLint
+- Prettier
 
-## Type Support for `.vue` Imports in TS
+## 如何使用？
 
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) to make the TypeScript language service aware of `.vue` types.
+1. 克隆项目到本地
 
-## Customize configuration
+```sh
+git clone https://github.com/SlimeBoyOwO/LingBlog.git
+```
 
-See [Vite Configuration Reference](https://vite.dev/config/).
-
-## Project Setup
+2. 安装依赖
 
 ```sh
 pnpm install
 ```
 
-### Compile and Hot-Reload for Development
+3. 运行个人主页部分
 
 ```sh
 pnpm dev
 ```
 
-### Type-Check, Compile and Minify for Production
+4. 运行博客部分
 
 ```sh
-pnpm build
+pnpm run docs:dev
 ```
 
-### Lint with [ESLint](https://eslint.org/)
+## 额外注明
 
-```sh
-pnpm lint
-```
+1. 本博客使用的背景资源来自网络，请勿商用，如有侵权删
+2. 字体使用的是Blueaka，来自[基沃托斯图书馆](https://kivo.fun/)
+3. 本开源项目展示的画作为本人画作，勿商 QwQ
