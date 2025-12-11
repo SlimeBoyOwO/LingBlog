@@ -1,4 +1,6 @@
 @import 'tailwindcss';
+@import '../../public/font/Blueaka/Blueaka.css';
+@import '../../public/font/Blueaka_Bold/Blueaka_Bold.css';
 
 body {
   background-color: #050509;
@@ -44,8 +46,9 @@ body {
 
 @theme {
   /* 字体配置 */
-  /* --font-sans: 'Inter', 'sans-serif'; */
-  /* --font-display: 'Space Grotesk', 'sans-serif'; */
+  --font-sans: 'Blueaka', -apple-system, BlinkMacSystemFont, 'Microsoft YaHei', sans-serif;
+  --font-mono: 'Blueaka', -apple-system, BlinkMacSystemFont, 'Microsoft YaHei', sans-serif;
+  --font-weight-bold: 700;
 
   /* 颜色配置 */
   --color-void: #0e1517;
