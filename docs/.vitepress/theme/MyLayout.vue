@@ -8,6 +8,7 @@ import HomePage from './components/views/HomePage.vue'
 import NotFoundPage from './components/views/NotFoundPage.vue'
 import ArticlePage from './components/views/ArticlePage.vue'
 import RightSidebar from './components/ui/RightSidebar.vue'
+import BlogBanner from './components/views/BlogBanner.vue'
 
 const { page, frontmatter } = useData()
 
@@ -30,6 +31,9 @@ const showRightSidebar = computed(() => {
     >
       <NavBar />
     </div>
+
+    <!-- 背景 -->
+    <BlogBanner />
 
     <!-- 页面主体容器 -->
     <div class="grow flex w-full max-w-[85%] mx-auto justify-center items-start px-4 py-6 gap-4">

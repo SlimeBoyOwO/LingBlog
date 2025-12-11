@@ -12,7 +12,11 @@ export default defineConfig({
     // https://vitepress.dev/reference/default-theme-config
     nav: [
       { text: '档案', link: 'intro/personal-intro' },
+      { text: '成分', link: 'projects/overview' },
       { text: '项目', link: 'projects/overview' },
+      { text: '笔记', link: 'projects/overview' },
+      { text: '生活', link: 'projects/overview' },
+      { text: '关于', link: 'projects/overview' },
     ],
 
     sidebar: [
