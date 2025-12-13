@@ -1,6 +1,6 @@
 <template>
   <div v-if="page.headers && page.headers.length > 0" class="card-base p-6 order-last sticky top-4">
-    <h4 class="font-semibold text-gray-200 mb-2 header-decoration">本页目录</h4>
+    <h4 class="font-semibold mb-2 header-decoration">本页目录</h4>
 
     <nav class="p-4">
       <ul class="space-y-2 text-sm">

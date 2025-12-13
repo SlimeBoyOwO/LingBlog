@@ -30,7 +30,7 @@ function isActive(link: string) {
     <nav class="overflow-y-auto max-h-[calc(100vh-120px)] p-4">
       <div v-for="(group, index) in sidebarGroups" :key="index" class="mb-6">
         <!-- 分组标题 -->
-        <h3 v-if="group.text" class="mb-3 text-sm font-bold text-gray-200 uppercase tracking-wider">
+        <h3 v-if="group.text" class="mb-3 text-sm font-bold uppercase tracking-wider">
           {{ group.text }}
         </h3>
 

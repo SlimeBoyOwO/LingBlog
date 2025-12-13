@@ -47,8 +47,8 @@ onUnmounted(() => {
   >
     <div class="container mx-auto w-[83%] flex justify-between items-center">
       <a href="#" class="font-display text-2xl font-bold tracking-tighter group">
-        <span class="text-white transition-colors">Nighty </span>
-        <span class="text-cyan-400 transition-colors">Wolf</span>
+        <span>Nighty </span>
+        <span class="text-brand transition-colors">Wolf</span>
       </a>
 
       <div class="flex items-center gap-12">
@@ -88,7 +88,7 @@ onUnmounted(() => {
           </div>
           <input
             type="text"
-            class="w-48 py-2 pl-10 pr-4 text-sm text-gray-300 bg-gray-800/50 border border-gray-700 rounded-full focus:outline-none focus:border-brand focus:bg-gray-800/70 transition-all"
+            class="w-48 py-2 pl-10 pr-4 text-sm text-gray-300 bg-card-bg/50 border border-gray-700 rounded-full focus:outline-none focus:border-brand focus:bg-card-bg/70 transition-all"
             placeholder="搜索文章..."
             @click="handleSearchClick"
           />

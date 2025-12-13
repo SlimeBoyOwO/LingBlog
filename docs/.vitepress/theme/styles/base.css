@@ -18,7 +18,7 @@
   --color-purple-glow: #bd00ff;
 
   --color-page-bg: oklch(98.765% 0.01749 92.694);
-  --color-card-bg: oklch(100% 0.00011 271.152);
+  --color-card-bg: oklch(99.655% 0.00181 249.268);
 
   /* 动画配置 */
   --animate-blob: blob 7s infinite;
