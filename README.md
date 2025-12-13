@@ -1,4 +1,4 @@
-# LingBlog - 一款以二次元，圆润风格为主的个人博客
+# LingBlog - 一款以二次元，圆润风格为主的个人主页+博客
 
 因为感觉博客模版太多，还是想自己开发一个来玩玩，于是就有了这个项目。目前还在施工中ing...
 
@@ -21,6 +21,10 @@
 - Vite
 - ESLint
 - Prettier
+
+## 在线预览（博客部分）
+
+[Github Pages](https://slimeboyowo.github.io/LingBlog/ling-chat/backend)
 
 ## 如何使用？
 
