@@ -33,7 +33,7 @@ const showSidebar = computed(() => {
     <!-- 页面主体容器 -->
     <div class="grow flex max-w-[85%] mx-auto justify-center px-4 py-6 gap-4">
       <!-- 左侧边栏 -->
-      <div v-if="showSidebar" class="hidden xl:block w-72 sticky">
+      <div v-if="showSidebar" class="hidden 2xl:block w-72 sticky">
         <SideBar />
       </div>
 
@@ -50,7 +50,9 @@ const showSidebar = computed(() => {
       </main>
 
       <!-- 右侧边栏 -->
-      <RightSidebar />
+      <div v-if="showSidebar" class="hidden xl:block">
+        <RightSidebar />
+      </div>
     </div>
 
     <!-- 页脚 -->
