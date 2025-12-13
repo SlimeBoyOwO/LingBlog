@@ -6,6 +6,7 @@ import tailwindcss from '@tailwindcss/vite'
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
+  base: '/LingBlog/',
   title: 'Ling Blog',
   description: '小灵の小文仓库',
   themeConfig: {
