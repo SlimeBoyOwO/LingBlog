@@ -32,6 +32,10 @@ export default defineConfig({
         items: [{ text: '项目一览', link: '/projects/overview' }],
       },
       {
+        text: 'LingChat',
+        items: [{ text: '后端结构', link: '/ling-chat/backend' }],
+      },
+      {
         text: '灵の笔记',
         items: [
           { text: '新建Github项目', link: '/tutorial/github-tutorial' },

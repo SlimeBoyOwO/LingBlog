@@ -16,11 +16,6 @@ const { page, frontmatter } = useData()
 const showSidebar = computed(() => {
   return !page.value.isNotFound && !frontmatter.value.home
 })
-
-// 是否显示右侧边栏
-const showRightSidebar = computed(() => {
-  return !page.value.isNotFound && page.value.headers && page.value.headers.length > 0
-})
 </script>
 
 <template>
@@ -36,9 +31,9 @@ const showRightSidebar = computed(() => {
     <BlogBanner />
 
     <!-- 页面主体容器 -->
-    <div class="grow flex w-full max-w-[85%] mx-auto justify-center items-start px-4 py-6 gap-4">
+    <div class="grow flex max-w-[85%] mx-auto justify-center px-4 py-6 gap-4">
       <!-- 左侧边栏 -->
-      <div v-if="showSidebar" class="hidden xl:block w-72 shrink-0 sticky h-fit">
+      <div v-if="showSidebar" class="hidden xl:block w-72 sticky">
         <SideBar />
       </div>
 
@@ -55,9 +50,7 @@ const showRightSidebar = computed(() => {
       </main>
 
       <!-- 右侧边栏 -->
-      <aside v-if="showRightSidebar" class="hidden 2xl:block w-72 shrink-0 sticky h-fit">
-        <RightSidebar />
-      </aside>
+      <RightSidebar />
     </div>
 
     <!-- 页脚 -->

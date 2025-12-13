@@ -6,7 +6,8 @@
   /* 字体配置 */
   --font-sans: 'Blueaka', -apple-system, BlinkMacSystemFont, 'Microsoft YaHei', sans-serif;
   --font-mono: 'Blueaka', -apple-system, BlinkMacSystemFont, 'Microsoft YaHei', sans-serif;
-  --font-weight-bold: 700;
+  /* 设置更合理的字重范围 */
+  --font-weight-bold: 700; /* 粗体 */
 
   /* 颜色配置 */
   --color-void: #0e1517;
@@ -44,15 +45,19 @@
 
 /* 隐藏滚动条 */
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 8px; /* 垂直滚动条宽度 */
+  height: 8px; /* 水平滚动条高度 */
 }
+
 ::-webkit-scrollbar-track {
   background: #1e293b;
 }
+
 ::-webkit-scrollbar-thumb {
   background: var(--vp-c-brand-1);
   border-radius: 4px;
 }
+
 ::-webkit-scrollbar-thumb:hover {
   background: var(--vp-c-brand-2);
 }
