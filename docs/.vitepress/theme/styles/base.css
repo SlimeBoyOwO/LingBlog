@@ -17,8 +17,8 @@
   --color-cyan-glow: #00f2ff;
   --color-purple-glow: #bd00ff;
 
-  --color-page-bg: oklch(0.16 0.014 260);
-  --color-card-bg: oklch(0.23 0.015 260);
+  --color-page-bg: oklch(98.765% 0.01749 92.694);
+  --color-card-bg: oklch(100% 0.00011 271.152);
 
   /* 动画配置 */
   --animate-blob: blob 7s infinite;
@@ -34,6 +34,8 @@
 
   .dark {
     color-scheme: dark;
+    --color-page-bg: oklch(0.16 0.014 260);
+    --color-card-bg: oklch(0.23 0.015 260);
   }
 }
 
@@ -62,13 +64,9 @@
   background: var(--vp-c-brand-2);
 }
 
-.page-bg {
-  background-color: oklch(0.16 0.014 260);
-}
-
 .card-base {
   width: 100%;
-  background-color: oklch(0.23 0.015 260);
+  background-color: var(--color-card-bg);
   padding: 1.5rem;
   border-radius: 0.75rem;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);

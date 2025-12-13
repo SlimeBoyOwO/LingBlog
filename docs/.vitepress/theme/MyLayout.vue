@@ -19,7 +19,7 @@ const showSidebar = computed(() => {
 </script>
 
 <template>
-  <div class="min-h-scree page-bg transition-colors duration-300 flex flex-col">
+  <div class="min-h-scree bg-page-bg transition-colors duration-300 flex flex-col">
     <!-- 导航栏 -->
     <div
       class="sticky top-0 z-50 w-full border-b border-gray-200 dark:border-gray-800 bg-card-bg backdrop-blur"
