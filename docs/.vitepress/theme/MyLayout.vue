@@ -31,14 +31,16 @@ const showSidebar = computed(() => {
     <BlogBanner />
 
     <!-- 页面主体容器 -->
-    <div class="grow flex max-w-[85%] mx-auto justify-center px-4 py-6 gap-4">
+    <div
+      class="grow flex w-full lg:max-w-[95%] xl:max-w-[85%] mx-auto justify-center px-4 py-4 gap-4"
+    >
       <!-- 左侧边栏 -->
       <div v-if="showSidebar" class="hidden 2xl:block w-72 sticky">
         <SideBar />
       </div>
 
       <!-- 主内容区 -->
-      <main class="flex-1 w-full min-w-[320px] min-h-[500px]">
+      <main class="flex-1 w-full min-h-[500px]">
         <!-- 404 -->
         <NotFoundPage v-if="page.isNotFound" />
 

@@ -62,7 +62,7 @@ onUnmounted(() => {
     :class="[
       'fixed w-full z-50 transition-all duration-500',
       // 如果菜单打开，强制显示背景色，否则文字可能看不清
-      isScrolled || isMobileMenuOpen ? 'bg-card-bg/95 backdrop-blur-md' : 'bg-card-bg/95',
+      isScrolled || isMobileMenuOpen ? 'bg-card-bg/95 backdrop-blur-md' : 'bg-card-bg/50',
       isScrolled ? 'py-2' : 'py-3',
       isHidden ? '-translate-y-full' : 'translate-y-0',
     ]"
