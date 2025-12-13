@@ -57,3 +57,4 @@ pnpm run docs:dev
 1. 本博客使用的背景资源来自网络，请勿商用，如有侵权删
 2. 字体使用的是Blueaka，来自[基沃托斯图书馆](https://kivo.fun/)
 3. 本开源项目展示的画作为本人画作，勿商 QwQ
+4. 样式整体模仿了[Mizuki UI](https://mizuki.mysqil.com/)的设计，感谢原作者的精彩设计。

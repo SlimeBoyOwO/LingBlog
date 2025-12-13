@@ -50,7 +50,7 @@ const showSidebar = computed(() => {
       </main>
 
       <!-- 右侧边栏 -->
-      <div v-if="showSidebar" class="hidden xl:block">
+      <div v-if="showSidebar" class="hidden xl:flex">
         <RightSidebar />
       </div>
     </div>
