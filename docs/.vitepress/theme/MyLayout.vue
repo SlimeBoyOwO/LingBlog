@@ -35,12 +35,12 @@ const showSidebar = computed(() => {
       class="grow flex w-full lg:max-w-[95%] xl:max-w-[85%] mx-auto justify-center px-4 py-4 gap-4"
     >
       <!-- 左侧边栏 -->
-      <div v-if="showSidebar" class="hidden 2xl:block w-72 sticky">
+      <div v-if="showSidebar" class="hidden 2xl:block w-72 shrink-0 sticky">
         <SideBar />
       </div>
 
       <!-- 主内容区 -->
-      <main class="flex-1 w-full min-h-[500px]">
+      <main class="flex-1 min-w-0 min-h-[500px]">
         <!-- 404 -->
         <NotFoundPage v-if="page.isNotFound" />
 
@@ -52,7 +52,7 @@ const showSidebar = computed(() => {
       </main>
 
       <!-- 右侧边栏 -->
-      <div v-if="showSidebar" class="hidden xl:flex">
+      <div v-if="showSidebar" class="hidden xl:flex w-72 shrink-0">
         <RightSidebar />
       </div>
     </div>
