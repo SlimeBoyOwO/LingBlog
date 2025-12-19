@@ -27,6 +27,7 @@ export default defineConfig({
         items: [
           { text: '公开资料', link: '/LingBlog/intro/personal-intro' },
           { text: '成分展示', link: '/LingBlog/intro/personal-interests' },
+          { text: '东方系列', link: '/LingBlog/intro/touhou-projects' },
         ],
       },
       {
