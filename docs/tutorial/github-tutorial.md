@@ -19,7 +19,7 @@ git config --global user.email "你的邮箱"
 git config --list
 ```
 
-## 二、GitHub 上创建仓库
+### 3. 创建 Github 仓库
 
 1. 登录 GitHub
 2. 点击右上角 + → New repository
@@ -32,9 +32,7 @@ git config --list
 
 4. 点击 Create repository
 
-## 三、本地项目上传步骤
-
-### 使用命令行
+### 4. 上传推送本地仓库
 
 ```bash
 # 1. 进入你的项目目录
@@ -58,9 +56,9 @@ git branch -M main  # 重命名分支为main（可选）
 git push -u origin main
 ```
 
-## 四、常见问题解决
+### 5. 常见问题解决
 
-### 1. 推送时出现错误
+#### 1. 推送时出现错误
 
 ```bash
 # 如果远程仓库已有内容（如README）
@@ -69,7 +67,7 @@ git pull origin main --allow-unrelated-histories
 git push -u origin main
 ```
 
-### 2. 忽略不需要上传的文件
+#### 2. 忽略不需要上传的文件
 
 创建 .gitignore 文件：
 
@@ -93,7 +91,7 @@ Thumbs.db
 *.swp
 ```
 
-### 3. 添加已有仓库的不同分支
+#### 3. 添加已有仓库的不同分支
 
 ```bash
 # 查看当前分支
@@ -106,7 +104,9 @@ git checkout -b feature-branch
 git push -u origin feature-branch
 ```
 
-## 五、后续日常操作
+## 二、日常 Github 操作
+
+### 1. 日常提交与更新操作
 
 ```bash
 # 日常更新流程
@@ -124,10 +124,36 @@ git status
 git log --oneline
 ```
 
-## 六、最佳实践建议
+### 2. 合并 develop 分支到 main 分支
 
-1. 提交信息要清晰：使用英文或中文明确描述更改内容
-2. 频繁提交：小步提交，不要积累大量更改
-3. 使用分支：新功能在单独分支开发
-4. 定期同步：开始工作前先 git pull
-5. 先测试再推送：确保代码能正常运行
+```bash
+# 保证分支是最新的
+git checkout develop
+git pull origin develop
+
+git checkout main
+git pull origin main
+
+# 合并 develop 分支到 main 分支
+git merge develop
+
+# 检查是否有冲突
+git status
+
+# 解决冲突后提交（这部分可以直接在VSC里操作）
+git add .
+git commit -m "合并 develop 分支到 main 分支"
+
+# 推送到远程
+git push origin main
+```
+
+### 3. 删除远程分支
+
+```bash
+# 删除远程分支
+git push origin --delete feature-branch
+
+# 推送
+git push origin main
+```
