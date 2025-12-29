@@ -36,7 +36,10 @@ export default defineConfig({
       },
       {
         text: 'LingChat',
-        items: [{ text: '后端结构', link: '/LingBlog/ling-chat/backend' }],
+        items: [
+          { text: '后端结构', link: '/LingBlog/ling-chat/backend' },
+          { text: '剧本设计', link: '/LingBlog/ling-chat/script-designer' },
+        ],
       },
       {
         text: '灵の笔记',
