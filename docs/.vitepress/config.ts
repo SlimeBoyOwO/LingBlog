@@ -38,7 +38,9 @@ export default defineConfig({
         text: 'LingChat',
         items: [
           { text: '后端结构', link: '/LingBlog/ling-chat/backend' },
+          { text: '前端结构', link: '/LingBlog/ling-chat/backend' },
           { text: '剧本设计', link: '/LingBlog/ling-chat/script-designer' },
+          { text: '日程设计', link: '/LingBlog/ling-chat/todo-designer' },
         ],
       },
       {
