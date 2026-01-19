@@ -157,3 +157,29 @@ git push origin --delete feature-branch
 # 推送
 git push origin main
 ```
+
+## 三、接受 Pull Request，本地测试
+
+```bash
+# 1. 获取PR的远程分支
+git fetch origin pull/<PR编号>/head:pr-<PR编号>
+
+# 示例：PR #123
+git fetch origin pull/123/head:pr-123
+
+# 2. 切换到该分支
+git checkout pr-123
+
+# 3. 与目标分支（如main）合并测试
+git checkout main
+git merge pr-123 --no-commit  # 先不提交，只合并
+
+# 4. 运行测试/编译/调试
+npm test  # 或 make test, pytest等
+
+# 5. 如果没问题，可以提交合并
+git commit -m "Merge PR #123"
+
+# 6. 如果有问题，取消合并
+git merge --abort
+```

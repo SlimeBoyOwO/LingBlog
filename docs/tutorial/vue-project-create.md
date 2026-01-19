@@ -32,17 +32,17 @@ pnpm add tailwindcss @tailwindcss/vite
 在 vite 配置文件中，添加：
 
 ```typescript
-import { defineConfig } from "vite";
-import tailwindcss from "@tailwindcss/vite";
+import { defineConfig } from 'vite'
+import tailwindcss from '@tailwindcss/vite'
 export default defineConfig({
   plugins: [tailwindcss()],
-});
+})
 ```
 
 在 css 文件中添加
 
 ```css
-@import "tailwindcss";
+@import 'tailwindcss';
 ```
 
 然后启动 run dev 即可，示范代码：
@@ -59,4 +59,16 @@ export default defineConfig({
     <h1 class="text-3xl font-bold underline">Hello world!</h1>
   </body>
 </html>
+```
+
+### 2.2 一些额外的推荐的依赖库
+
+- `@vueuse/core`：Vue 的实用工具库，提供了一些常用的 Vue 组合式 API
+- `element-plus`：Vue 的 UI 组件库，提供了一些常用的 UI 组件（自己写更有特色点）
+- `lucide`: 提供了一些常用又好看的图标，非常方便，查找网页：https://lucide.dev/icons/
+-
+
+```bash
+pnpm add @vueuse/core
+pnpm add element-plus
 ```

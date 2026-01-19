@@ -38,7 +38,8 @@ export default defineConfig({
         text: 'LingChat',
         items: [
           { text: '后端结构', link: '/LingBlog/ling-chat/backend' },
-          { text: '前端结构', link: '/LingBlog/ling-chat/backend' },
+          { text: '前端结构', link: '/LingBlog/ling-chat/frontend' },
+          { text: '数据库设计', link: '/LingBlog/ling-chat/database-designer' },
           { text: '剧本设计', link: '/LingBlog/ling-chat/script-designer' },
           { text: '日程设计', link: '/LingBlog/ling-chat/todo-designer' },
         ],
@@ -47,6 +48,7 @@ export default defineConfig({
         text: '灵の笔记',
         items: [
           { text: '新建Github项目', link: '/LingBlog/tutorial/github-tutorial' },
+          { text: 'Python项目管理', link: '/LingBlog/tutorial/python-manage' },
           { text: '创建Vue项目', link: '/LingBlog/tutorial/vue-project-create' },
         ],
       },
