@@ -40,6 +40,7 @@ export default defineConfig({
           { text: '后端结构', link: '/LingBlog/ling-chat/backend' },
           { text: '前端结构', link: '/LingBlog/ling-chat/frontend' },
           { text: '数据库设计', link: '/LingBlog/ling-chat/database-designer' },
+          { text: '记忆构建器', link: '/LingBlog/ling-chat/memory-builder-designer' },
           { text: '剧本设计', link: '/LingBlog/ling-chat/script-designer' },
           { text: '日程设计', link: '/LingBlog/ling-chat/todo-designer' },
         ],
