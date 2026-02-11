@@ -90,7 +90,7 @@ $$
 ## 🚀 如何参与（作战手册）
 
 1.  **接取任务**：
-    前往 [GitHub Issue 列表](你的仓库Issue链接)，寻找带有 `Status: Help Wanted` 标签的任务。
+    前往 [GitHub Issue 列表](https://github.com/SlimeBoyOwO/LingChat)，寻找带有 `Status: Help Wanted` 标签的任务。
     在 Issue 下方评论或和管理员QQ联系自己可以做的相关言论之后。管理员分配给你后即视为接取成功。
 
 2.  **执行任务**：
