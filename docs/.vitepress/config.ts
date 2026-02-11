@@ -53,6 +53,10 @@ export default defineConfig({
           { text: '创建Vue项目', link: '/LingBlog/tutorial/vue-project-create' },
         ],
       },
+      {
+        text: '其他奇喵',
+        items: [{ text: 'LingChat激励', link: '/LingBlog/ling-chat/developers-award' }],
+      },
     ],
 
     socialLinks: [{ icon: 'github', link: 'https://github.com/vuejs/vitepress' }],
