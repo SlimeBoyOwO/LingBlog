@@ -54,6 +54,10 @@ export default defineConfig({
         ],
       },
       {
+        text: '绘画小角落',
+        items: [{ text: '绘画笔记', link: '/LingBlog/drawings/drawing-tutorial' }],
+      },
+      {
         text: '其他奇喵',
         items: [{ text: 'LingChat激励', link: '/LingBlog/ling-chat/developers-award' }],
       },
