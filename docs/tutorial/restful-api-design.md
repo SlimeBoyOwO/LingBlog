@@ -104,15 +104,7 @@ Header: Authorization: Bearer xxx
 
 #### 2.2.2. 返回合适的HTTP状态码
 
-响应需要带上合适的状态码，前端开发者或运维人员通过查看状态码，就能快速定位问题方向
-
-```http
-请求网址：http://api.codefather.cm/
-请求方法：GET
-状态代码：200 OK
-远程地址：
-引荐来源网址政策：strict-origin-when-cross-origin
-```
+响应需要带上合适的状态码，前端开发者或运维人员通过查看状态码，就能快速定位问题方向。
 
 HTTP 状态码有很多，大致可以分为5类：
 
