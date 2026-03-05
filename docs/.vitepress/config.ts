@@ -43,6 +43,7 @@ export default defineConfig({
           { text: '记忆构建器', link: '/LingBlog/ling-chat/memory-builder-design' },
           { text: '剧本设计', link: '/LingBlog/ling-chat/script-designer' },
           { text: '日程设计', link: '/LingBlog/ling-chat/todo-designer' },
+          { text: '主动对话设计', link: '/LingBlog/ling-chat/proactive-design' },
         ],
       },
       {
@@ -51,6 +52,8 @@ export default defineConfig({
           { text: '新建Github项目', link: '/LingBlog/tutorial/github-tutorial' },
           { text: 'Python项目管理', link: '/LingBlog/tutorial/python-manage' },
           { text: '创建Vue项目', link: '/LingBlog/tutorial/vue-project-create' },
+          { text: '程序员缩写词', link: '/LingBlog/tutorial/programers-words' },
+          { text: 'RESTful API设计', link: '/LingBlog/tutorial/restful-api-design.md' },
         ],
       },
       {
