@@ -92,7 +92,7 @@ Header: Authorization: Bearer xxx
 
 #### 2.2.1. 统一响应格式
 
-目前大多数 `RESTful API` 基本都使用 `JSON` 格式，因为轻量、容易解析，但并不是强制的，也可以用`XML` `HTML` 等格式,
+目前大多数 `RESTful API` 基本都使用 `JSON` 格式，因为轻量、容易解析，但并不是强制的，也可以用`XML or HTML` 等格式。
 
 ```json
 {
