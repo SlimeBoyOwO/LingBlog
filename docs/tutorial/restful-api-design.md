@@ -43,7 +43,7 @@ RESTful API有以下优点：
 有时我们需要更精确的筛选数据。
 
 ```js
-GET https://api.codefather.cm/users
+GET xxx/users
 ```
 
 - **分页**：`/users?page=2&limit=10` — 查询第2页，每页10条用户数据
@@ -55,7 +55,7 @@ GET https://api.codefather.cm/users
 #### Restful 风格
 
 ```js
-GET https://api.codefather.cm/users?age=25&page=2&sort=created_at
+GET xxx/users?age=25&page=2&sort=created_at
 ```
 
 - **筛选** age=25
@@ -92,7 +92,7 @@ Header: Authorization: Bearer xxx
 
 #### 2.2.1. 统一响应格式
 
-目前大多数 `RESTful API` 基本都使用 `JSON` 格式，因为轻量、容易解析，但并不是强制的，也可以用`XML or HTML` 等格式。
+目前大多数 `RESTful API` 基本都使用 `JSON` 格式，因为轻量、容易解析，但并不是强制的。
 
 ```json
 {
