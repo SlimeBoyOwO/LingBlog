@@ -53,7 +53,7 @@ export default defineConfig({
           { text: 'Python项目管理', link: '/LingBlog/tutorial/python-manage' },
           { text: '创建Vue项目', link: '/LingBlog/tutorial/vue-project-create' },
           { text: '程序员缩写词', link: '/LingBlog/tutorial/programers-words' },
-          { text: 'RESTful API设计', link: '/LingBlog/tutorial/restful-api-design.md' },
+          { text: 'RESTful API设计', link: '/LingBlog/tutorial/restful-api-design' },
         ],
       },
       {
