@@ -62,7 +62,10 @@ export default defineConfig({
       },
       {
         text: '其他奇喵',
-        items: [{ text: 'LingChat激励', link: '/LingBlog/ling-chat/developers-award' }],
+        items: [
+          { text: 'LingChat激励', link: '/LingBlog/ling-chat/developers-award' },
+          { text: '互联网资源', link: '/LingBlog/others/great-resources' },
+        ],
       },
     ],
 
