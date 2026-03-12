@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref, onMounted, onUnmounted, watch } from 'vue'
+import { ref, onMounted, onUnmounted } from 'vue'
 import ThemeToggle from './ThemeToggle.vue'
 import { useData } from 'vitepress'
 

@@ -1,3 +1,14 @@
+---
+title: LingChat 0.4.0 更新日志
+description: LingChat 新版本的更新内容汇总文档
+tags:
+  - 编程
+  - Vue
+  - 前端
+---
+
+# LingChat 0.4.0 更新日志
+
 ## 一、工作总结
 
 相比于 LingChat 0.3.0，我们完成了十分多出色的成就，项目也慢慢从稚嫩走向成熟，以下是一份简单的总结：

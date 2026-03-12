@@ -1,3 +1,12 @@
+---
+title: LingChat 前端代码结构
+description: 本文档介绍了 LingChat 前端项目的代码结构，包括主要技术栈、项目结构、组件结构等。
+tags:
+  - 编程
+  - Vue
+  - 前端
+---
+
 # LingChat 前端代码结构
 
 [[toc]]

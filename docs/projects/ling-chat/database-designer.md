@@ -1,3 +1,12 @@
+---
+title: LingChat 数据库设计
+description: 一份关于 LingChat 内部数据存储结构讲解文档
+tags:
+  - 软件设计
+  - 数据库
+  - LingChat
+---
+
 # AI-Galgame 数据库设计
 
 ## 系统说明

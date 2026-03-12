@@ -1,3 +1,13 @@
+---
+title: Vue 项目构建教程
+description: Vue 项目构建与常见插件安装
+tags:
+  - 编程
+  - Vue
+  - 前端
+  - 学习
+---
+
 # Vue 项目构建教程
 
 ## 1. 使用 pnpm 初始化项目

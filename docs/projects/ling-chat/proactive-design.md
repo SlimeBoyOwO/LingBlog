@@ -1,3 +1,12 @@
+---
+title: LingChat 主动对话系统设计
+description: 这是一份讲解 LingChat 是如何设计主动对话逻辑的文档。
+tags:
+  - 软件设计
+  - 主动对话
+  - 提示词工程
+---
+
 # LingChat 主动对话系统设计
 
 ## 一、用户所能存储的信息

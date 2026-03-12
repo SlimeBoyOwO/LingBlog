@@ -1,5 +1,10 @@
 <template>
-  <div class="card-base flex flex-col items-center justify-center gap-4 p-4">
+  <div class="card-base flex flex-col items-center justify-center gap-4 p-4 relative">
+    <div
+      class="absolute -top-4 -left-4 w-12 h-12 rounded-full text-brand shadow-md transform -rotate-18"
+    >
+      <Cat :size="32" />
+    </div>
     <div class="avatar">
       <img src="../../../assets/images/NoiQ.png" class="rounded-4xl" alt="avatar" />
     </div>
@@ -21,6 +26,7 @@
 </template>
 
 <script setup lang="ts">
+import { Cat } from 'lucide-vue-next'
 const contacts = [
   {
     title: 'GitHub',

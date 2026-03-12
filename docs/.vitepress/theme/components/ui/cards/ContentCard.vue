@@ -1,10 +1,10 @@
 <template>
-  <div v-if="page.headers && page.headers.length > 0" class="card-base p-6 order-last sticky top-4">
+  <div v-if="flatHeaders.length > 0" class="card-base p-6 order-last sticky top-4">
     <h4 class="font-semibold mb-2 header-decoration">本页目录</h4>
 
-    <nav class="p-4">
+    <nav class="p-4 max-h-[calc(100vh-220px)] overflow-y-auto pr-2">
       <ul class="space-y-2 text-sm">
-        <li v-for="header in page.headers" :key="header.slug">
+        <li v-for="header in flatHeaders" :key="header.slug">
           <a
             :href="`#${header.slug}`"
             class="block transition-colors duration-200 border-l-2 pl-3 py-1 rounded-sm"
@@ -39,10 +39,35 @@
 
 <script setup lang="ts">
 import { useData } from 'vitepress'
-import { ref, onMounted, onUnmounted, watchEffect } from 'vue'
+import { ref, onMounted, onUnmounted, watchEffect, computed } from 'vue'
 
 const { page } = useData()
 const activeId = ref('')
+
+type VpHeader = {
+  level: number
+  title: string
+  slug: string
+  children?: VpHeader[]
+}
+
+const flatHeaders = computed(() => {
+  const result: VpHeader[] = []
+  const walk = (headers?: VpHeader[]) => {
+    if (!headers) return
+    for (const header of headers) {
+      if (header.level === 2 || header.level === 3) {
+        result.push(header)
+      }
+      if (header.children && header.children.length > 0) {
+        walk(header.children)
+      }
+    }
+  }
+
+  walk(page.value.headers as VpHeader[] | undefined)
+  return result
+})
 
 // 滚动监听逻辑：高亮当前可视区域的标题
 // 这是一个简化的 IntersectionObserver 实现
@@ -54,7 +79,7 @@ function initObserver() {
   console.log(page.value.headers)
 
   // 获取所有标题元素对应的 DOM
-  const headers = page.value.headers
+  const headers = flatHeaders.value
     .map((h) => document.getElementById(h.slug))
     .filter(Boolean) as HTMLElement[]
 

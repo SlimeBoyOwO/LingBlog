@@ -1,3 +1,12 @@
+---
+title: LingChat 0.4.0 更新新系统设计
+description: LingChat 新系统文档讲解
+tags:
+  - 软件设计
+  - 提示词工程
+  - 数据库
+---
+
 # LingChat 0.4.0 全新的系统设计
 
 ## 1. 旧版本的问题总结

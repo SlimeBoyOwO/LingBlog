@@ -1,24 +1,35 @@
-import { defineConfig } from 'vitepress'
+﻿import { defineConfig } from 'vitepress'
 
 import vueJsx from '@vitejs/plugin-vue-jsx'
 import vueDevTools from 'vite-plugin-vue-devtools'
 import tailwindcss from '@tailwindcss/vite'
+import { computeWordStats } from './theme/utils/text'
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
   base: '/LingBlog/',
   cleanUrls: true,
   title: 'Ling Blog',
-  description: '小灵の小文仓库',
+  description: '钦灵的个人博客喵~',
+  lastUpdated: true,
+  transformPageData(pageData, ctx) {
+    const content = (ctx as { content?: string }).content
+    if (!content) return
+    const { wordCount, readingTime } = computeWordStats(content)
+    return {
+      wordCount,
+      readingTime,
+    }
+  },
   themeConfig: {
     // https://vitepress.dev/reference/default-theme-config
     nav: [
+      { text: '主页', link: '/LingBlog/' },
       { text: '档案', link: '/LingBlog/intro/personal-intro' },
-      { text: '成分', link: '/LingBlog/projects/overview' },
       { text: '项目', link: '/LingBlog/projects/overview' },
-      { text: '笔记', link: '/LingBlog/projects/overview' },
-      { text: '生活', link: '/LingBlog/projects/overview' },
-      { text: '关于', link: '/LingBlog/projects/overview' },
+      { text: '笔记', link: '/LingBlog/tutorial/github-tutorial' },
+      { text: '生活', link: '/LingBlog/drawings/drawing-tutorial' },
+      { text: '其他', link: '/LingBlog/others/great-resources' },
     ],
 
     sidebar: [
@@ -37,13 +48,13 @@ export default defineConfig({
       {
         text: 'LingChat',
         items: [
-          { text: '后端结构', link: '/LingBlog/ling-chat/backend' },
-          { text: '前端结构', link: '/LingBlog/ling-chat/frontend' },
-          { text: '数据库设计', link: '/LingBlog/ling-chat/database-designer' },
-          { text: '记忆构建器', link: '/LingBlog/ling-chat/memory-builder-design' },
-          { text: '剧本设计', link: '/LingBlog/ling-chat/script-designer' },
-          { text: '日程设计', link: '/LingBlog/ling-chat/todo-designer' },
-          { text: '主动对话设计', link: '/LingBlog/ling-chat/proactive-design' },
+          { text: '后端结构', link: '/LingBlog/projects/ling-chat/backend' },
+          { text: '前端结构', link: '/LingBlog/projects/ling-chat/frontend' },
+          { text: '数据库设计', link: '/LingBlog/projects/ling-chat/database-designer' },
+          { text: '记忆构建器', link: '/LingBlog/projects/ling-chat/memory-builder-design' },
+          { text: '剧本设计', link: '/LingBlog/projects/ling-chat/script-designer' },
+          { text: '日程设计', link: '/LingBlog/projects/ling-chat/todo-designer' },
+          { text: '主动对话设计', link: '/LingBlog/projects/ling-chat/proactive-design' },
         ],
       },
       {
@@ -63,7 +74,7 @@ export default defineConfig({
       {
         text: '其他奇喵',
         items: [
-          { text: 'LingChat激励', link: '/LingBlog/ling-chat/developers-award' },
+          { text: 'LingChat激励', link: '/LingBlog/projects/ling-chat/developers-award' },
           { text: '互联网资源', link: '/LingBlog/others/great-resources' },
         ],
       },

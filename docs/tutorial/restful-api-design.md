@@ -1,3 +1,12 @@
+---
+title: Restful API 设计规范
+description: 主要是关于前端 API 设计的文档，学习 RESTful API 设计规范。
+tags:
+  - 编程
+  - Vue
+  - 前端
+---
+
 # RESTFUL API 设计规范
 
 ## 一、为什么要用 RESTful API

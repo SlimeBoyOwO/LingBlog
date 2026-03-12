@@ -1,3 +1,12 @@
+---
+title: Python 项目创建与管理教程
+description: 一些你必须了解的python项目创建与管理知识
+tags:
+  - 编程
+  - Vue
+  - 前端
+---
+
 # Python 项目管理环境配置
 
 ## 1. 使用uv创建虚拟环境

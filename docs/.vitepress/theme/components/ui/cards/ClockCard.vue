@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { ref, onMounted, onUnmounted, computed } from 'vue'
+import { Clock } from 'lucide-vue-next'
 
 // 定义问候语对象，包含问候语、内容和颜表情
 const greetings = {
@@ -100,6 +101,11 @@ onUnmounted(() => {
 
 <template>
   <div class="card-base">
+    <div
+      class="absolute -top-4 -right-8 w-12 h-12 rounded-full text-brand shadow-md transform -rotate-18"
+    >
+      <Clock :size="32" />
+    </div>
     <div class="header-decoration mb-4"><h4>滴答时钟</h4></div>
     <div class="relative p-2">
       <!-- 时间显示 -->

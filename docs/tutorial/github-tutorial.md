@@ -1,3 +1,12 @@
+---
+title: GitHub 仓库管理教程
+description: 教你如何创建、管理 GitHub 仓库
+tags:
+  - 学习
+  - Github
+  - 开源
+---
+
 # GitHub 仓库管理教程
 
 ## 一、初始化工作

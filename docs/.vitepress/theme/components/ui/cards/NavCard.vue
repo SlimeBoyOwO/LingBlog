@@ -1,23 +1,47 @@
-<script setup lang="ts">
+﻿<script setup lang="ts">
 import { useData, useRoute, withBase } from 'vitepress'
 import { computed } from 'vue'
 
-const { theme } = useData()
+const { theme, site } = useData()
 const route = useRoute()
 
-// 获取侧边栏配置
+const normalizePath = (path: string) => {
+  const strip = (value: string) => value.replace(/\.html$/, '').replace(/^\/+|\/+$/g, '')
+  const base = strip(site.value.base || '/')
+  let normalized = strip(path)
+  if (base && normalized.startsWith(base)) {
+    normalized = strip(normalized.slice(base.length))
+  }
+  return normalized
+}
+
+const getSection = (path: string) => {
+  const normalized = normalizePath(path)
+  const parts = normalized.split('/').filter(Boolean)
+  return parts[0] || ''
+}
+
 const sidebarGroups = computed(() => {
   const sidebar = theme.value.sidebar
-  if (Array.isArray(sidebar)) {
+  if (!Array.isArray(sidebar)) {
+    return []
+  }
+
+  const currentSection = getSection(route.path)
+  if (!currentSection) {
     return sidebar
   }
-  // TODO: 支持多路径侧边栏，之后可以扩展
-  return []
+
+  const matched = sidebar.filter((group) => {
+    const items = Array.isArray(group.items) ? group.items : []
+    return items.some((item) => getSection(item.link) === currentSection)
+  })
+
+  return matched.length > 0 ? matched : sidebar
 })
 
-// 判断链接是否激活
 function isActive(link: string) {
-  const normalize = (path: string) => path.replace(/^\/|\/$/g, '').replace(/\.html$/, '')
+  const normalize = (path: string) => path.replace(/^\/+|\/+$/g, '').replace(/\.html$/, '')
   return normalize(route.path) === normalize(withBase(link))
 }
 </script>
@@ -25,16 +49,16 @@ function isActive(link: string) {
 <template>
   <div class="card-base">
     <div class="mb-2">
-      <h4 class="header-decoration">文章总览</h4>
+      <h4 class="header-decoration">文章目录</h4>
     </div>
     <nav class="overflow-y-auto max-h-[calc(100vh-120px)] p-4">
       <div v-for="(group, index) in sidebarGroups" :key="index" class="mb-6">
-        <!-- 分组标题 -->
+        <!-- 鍒嗙粍鏍囬 -->
         <h3 v-if="group.text" class="mb-3 text-sm font-bold uppercase tracking-wider">
           {{ group.text }}
         </h3>
 
-        <!-- 分组内的链接 -->
+        <!-- 鍒嗙粍鍐呯殑閾炬帴 -->
         <ul class="space-y-2">
           <li v-for="item in group.items" :key="item.link">
             <a

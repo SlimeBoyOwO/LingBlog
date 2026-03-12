@@ -1,3 +1,12 @@
+---
+title: LingChat 开发奖赏机制这一块
+description: 完成超级地球任务，获取创作星辉点数吧！
+tags:
+  - 开源设计
+  - LingChat
+  - 代码贡献
+---
+
 # 🌍【LingChat开发】征召令：开源贡献与星辉奖励机制说明 v1.0
 
 > **来自超级LingChat真理部的最高指令：**

@@ -1,3 +1,13 @@
+---
+title: LingChat 后端代码结构
+description: 了解 LingChat 后端代码的结构和主要功能。
+tags:
+  - LingChat
+  - 后端
+  - Python
+  - 异步编程
+---
+
 # LingChat 后端代码结构
 
 [[toc]]
