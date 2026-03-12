@@ -100,7 +100,7 @@ onUnmounted(() => {
 </script>
 
 <template>
-  <div class="card-base">
+  <div class="card-base relative">
     <div
       class="absolute -top-4 -right-8 w-12 h-12 rounded-full text-brand shadow-md transform -rotate-18"
     >

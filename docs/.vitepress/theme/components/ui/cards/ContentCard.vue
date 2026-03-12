@@ -2,7 +2,7 @@
   <div v-if="flatHeaders.length > 0" class="card-base p-6 order-last sticky top-4">
     <h4 class="font-semibold mb-2 header-decoration">本页目录</h4>
 
-    <nav class="p-4 max-h-[calc(100vh-220px)] overflow-y-auto pr-2">
+    <nav class="p-4 max-h-[calc(100vh-220px)] overflow-y-auto">
       <ul class="space-y-2 text-sm">
         <li v-for="header in flatHeaders" :key="header.slug">
           <a

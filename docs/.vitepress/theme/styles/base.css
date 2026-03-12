@@ -65,7 +65,6 @@
 }
 
 .card-base {
-  position: relative;
   width: 100%;
   background-color: var(--color-card-bg);
   padding: 1.5rem;
