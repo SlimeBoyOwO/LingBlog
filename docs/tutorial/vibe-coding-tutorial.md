@@ -65,6 +65,7 @@ tags:
 3. `CodeX`的`App`下载：[CodeX](https://apps.microsoft.com/detail/9plm9xgg6vks?hl=en-US&gl=US)
 4. `DeepSeek`，网站：[DeepSeek](https://chat.deepseek.com/)
 5. `Claude Code`，安装教程：[B站教程](https://www.bilibili.com/video/BV19vc5zUEeQ)
+   > CC-Swtich是必须的，地址：[CC-Switch](https://github.com/farion1231/cc-switch/releases)
 6. `Claude Code Opus/Sonnet`接入教程：[B站教程](https://www.bilibili.com/video/BV1PRcqzNE8G)
    > 推荐 OpenRounter 或者 0011 都行。
 7. `Antigravity`，下载链接：[Antigravity](https://antigravity.google/)
