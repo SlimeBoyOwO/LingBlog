@@ -24,7 +24,7 @@
 
 ## 在线预览（博客部分）
 
-[Github Pages](https://slimeboyowo.github.io/LingBlog/ling-chat/backend)
+[Github Pages](https://slimeboyowo.github.io/LingBlog/)
 
 ## 如何使用？
 

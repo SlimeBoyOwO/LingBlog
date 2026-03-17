@@ -60,6 +60,7 @@ export default defineConfig({
       {
         text: '灵の笔记',
         items: [
+          { text: 'Vibe Coding教程', link: '/LingBlog/tutorial/vibe-coding-tutorial' },
           { text: '新建Github项目', link: '/LingBlog/tutorial/github-tutorial' },
           { text: 'Python项目管理', link: '/LingBlog/tutorial/python-manage' },
           { text: '创建Vue项目', link: '/LingBlog/tutorial/vue-project-create' },
