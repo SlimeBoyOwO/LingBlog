@@ -53,6 +53,7 @@ export default defineConfig({
           { text: '数据库设计', link: '/LingBlog/projects/ling-chat/database-designer' },
           { text: '记忆构建器', link: '/LingBlog/projects/ling-chat/memory-builder-design' },
           { text: '剧本设计', link: '/LingBlog/projects/ling-chat/script-designer' },
+          { text: '剧本创作指南', link: '/LingBlog/projects/ling-chat/script-guide' },
           { text: '剧本事件总览', link: '/LingBlog/projects/ling-chat/script-events' },
           { text: '日程设计', link: '/LingBlog/projects/ling-chat/todo-designer' },
           { text: '主动对话设计', link: '/LingBlog/projects/ling-chat/proactive-design' },
