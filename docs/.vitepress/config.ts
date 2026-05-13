@@ -66,6 +66,7 @@ export default defineConfig({
           { text: '新建Github项目', link: '/LingBlog/tutorial/github-tutorial' },
           { text: 'Python项目管理', link: '/LingBlog/tutorial/python-manage' },
           { text: '创建Vue项目', link: '/LingBlog/tutorial/vue-project-create' },
+          { text: 'Tauri项目踩坑', link: '/LingBlog/tutorial/tauri-tutorial' },
           { text: '程序员缩写词', link: '/LingBlog/tutorial/programers-words' },
           { text: 'RESTful API设计', link: '/LingBlog/tutorial/restful-api-design' },
         ],
