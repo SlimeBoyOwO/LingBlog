@@ -40,6 +40,13 @@ pnpm create tauri-app
   },
 ```
 
+### 2. Rust 编译时遇到文件锁
+
+有时候因为 Vibe Coding 时候，CLI 会占用文件锁，然后 AI 太蠢了自己又没关掉，所以会遇到这个问题：
+`Blocking waiting for file lock on package cache`
+
+解决方法：`taskkill /f /im cargo.exe `
+
 ## 二、Vue 开发部分的问题
 
 ### 1. Tauri 初始化为 Vue 项目配置必须的依赖
