@@ -58,7 +58,7 @@ tags:
 2.  `import_settings`的时候会初始化台词表的第一句，也就是主角的`system`设定消息。
 3.  `init_lines()`存储了台词表初始化的流程，这个过程会自动更新台词表的主角，通过`self.game_status.role_manager`的`refresh_memories_from_lines()`方法，自动更新台词表出现的所有角色生成`GameRole`对象，为它们生成自己对应的记忆。
     > 这里`为他们生成自己的记忆`，就是永久记忆可以扩展的地方了，可以通过获取的记忆更新永久记忆，或者把永久记忆添加到记忆中，其中永久记忆使用`json`格式存储。 @风雪
-4.  台词表到记忆的更新方法是通过`MemoryBuilder`里面的算法实现的，具体实现流程可以参考`RoleManager`内`MemoryBuilder`模块的代码，算法设计解释可以参考我的博客：![消息构建器算法设计](https://slimeboyowo.github.io/LingBlog/ling-chat/memory-builder-design)。时间复杂度是`O(N+L)`，`N`是台词数量，`L`是台词长度。
+4.  台词表到记忆的更新方法是通过`MemoryBuilder`里面的算法实现的，具体实现流程可以参考`RoleManager`内`MemoryBuilder`模块的代码，算法设计解释可以参考我的博客：![消息构建器算法设计](https://slimeboyowo.github.io/LingBlog/blog/projects/ling-chat/memory-builder-design)。时间复杂度是`O(N+L)`，`N`是台词数量，`L`是台词长度。
 5.  当调用LLM生成信息的时候，也就是`MessageGenerator`的`process_message_stream`方法被调用的时候，首先会根据用户输入消息`user_message`构建用户台词，然后使用台词表构建角色记忆，将对应角色（也就是当前`GameStatus`的`current_role`）记忆传输到LLM接口中，等待LLM生成消息，把生成出的消息通过程序处理后，更新到台词表中。
 
 #### 2. 剧本模式的运行逻辑（尚未完工）

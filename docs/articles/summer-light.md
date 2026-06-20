@@ -13,8 +13,8 @@ _作者：/已保密/_
 <AplayerWrapper :audio="{ 
   name: '夏日余晖', 
   artist: '莱姆 & 钦灵', 
-  url: '/LingBlog/assets/readings/夏日余晖朗读.wav',
-  cover: '/LingBlog/assets/images/cover.png'
+  url: '/LingBlog/blog/assets/readings/夏日余晖朗读.wav',
+  cover: '/LingBlog/blog/assets/images/cover.png'
 }" />
 
 ## 文章内容

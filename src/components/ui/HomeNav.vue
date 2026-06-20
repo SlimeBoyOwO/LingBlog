@@ -92,6 +92,13 @@ const menuItems = [
 
 // --- 页面逻辑 ---
 const scrollTo = (id: string) => {
+  // 博客链接：跳转到博客页面
+  if (id === 'blog') {
+    uiStore.mobileMenuOpen = false
+    window.location.href = import.meta.env.BASE_URL + 'blog/'
+    return
+  }
+
   const el = document.getElementById(id)
   if (el) {
     el.scrollIntoView({ behavior: 'smooth' })

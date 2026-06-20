@@ -16,7 +16,10 @@
     "format": "prettier --write --experimental-cli src/",
     "docs:dev": "vitepress dev docs",
     "docs:build": "vitepress build docs",
-    "docs:preview": "vitepress preview docs"
+    "docs:preview": "vitepress preview docs",
+    "build:all": "pnpm build-only && pnpm docs:build && pnpm merge:dist",
+    "merge:dist": "node -e \"const{cpSync,existsSync,mkdirSync}=require('fs');const{join}=require('path');const d=join('dist','blog');if(!existsSync(d))mkdirSync(d,{recursive:true});cpSync(join('docs','.vitepress','dist'),d,{recursive:true});console.log('Merged: dist/ + dist/blog/')\"",
+    "preview:all": "pnpm build:all && vite preview"
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.1.17",
