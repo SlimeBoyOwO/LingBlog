@@ -10,10 +10,13 @@ import './styles/components/vp-code.css'
 import './styles/components/vp-code-group.css'
 import './styles/components/vp-doc.css'
 
+import AplayerWrapper from './components/base/AplayerWrapper.vue'
+
 export default {
   Layout,
   enhanceApp({ app, router, siteData }) {
     app.provide('theme', 'custom')
     app.use(createPinia())
+    app.component('AplayerWrapper', AplayerWrapper)
   },
 } satisfies Theme

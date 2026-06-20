@@ -20,6 +20,7 @@
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.1.17",
+    "aplayer": "^1.10.1",
     "gray-matter": "^4.0.3",
     "lucide-vue-next": "^0.577.0",
     "pinia": "^3.0.4",
