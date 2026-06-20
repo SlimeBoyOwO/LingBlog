@@ -1,5 +1,5 @@
 ---
-title: 莱尔的练习作
+title: 某人の同人文的练习作
 description: 哎嘿嘿嘿嘿
 tags:
   - 写作
@@ -13,8 +13,8 @@ _作者：/已保密/_
 <AplayerWrapper :audio="{ 
   name: '夏日余晖', 
   artist: '莱姆 & 钦灵', 
-  url: './assets/readings/夏日余晖朗读.wav',
-  cover: './assets/images/cover.png'
+  url: '/LingBlog/assets/readings/夏日余晖朗读.wav',
+  cover: '/LingBlog/assets/images/cover.png'
 }" />
 
 ## 文章内容
