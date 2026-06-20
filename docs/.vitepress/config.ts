@@ -77,7 +77,7 @@ export default defineConfig({
       },
       {
         text: '书和远方',
-        items: [{ text: '同人文', link: '/LingBlog/articles/layray-article' }],
+        items: [{ text: '同人文', link: '/LingBlog/articles/summer-light' }],
       },
       {
         text: '其他奇喵',
