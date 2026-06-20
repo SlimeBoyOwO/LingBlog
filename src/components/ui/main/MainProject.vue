@@ -87,7 +87,7 @@
 
 <script setup lang="ts">
 import xiaoQinLing from '@/assets/pics/小钦灵.png'
-import lingChat from '@/assets/pics/LingChat.png'
+import lingChat from '@/assets/pics/lingChat.png'
 import qinKitPVP from '@/assets/pics/qinkitpvps.png'
 
 const projects = [
