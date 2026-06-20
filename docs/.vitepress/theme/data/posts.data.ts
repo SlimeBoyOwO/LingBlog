@@ -11,6 +11,7 @@ type PostData = {
   updated: number
   wordCount: number
   readingTime: number
+  plainText: string
 }
 
 const normalizePath = (value: string) => value.split(path.sep).join('/')
@@ -82,11 +83,21 @@ export default defineLoader<PostData[]>({
         if (file.includes(`${path.sep}.vitepress${path.sep}`)) return null
 
         const src = fs.readFileSync(file, 'utf-8')
-        const { data: frontmatter } = matter(src)
+        const { data: frontmatter, content: body } = matter(src)
         const { wordCount, readingTime } = computeWordStats(src)
         const updated = await resolveUpdated(file, frontmatter)
         const title = frontmatter.title || extractTitle(src) || ''
         const url = buildUrl(file, srcDir, cleanUrls)
+        const plainText = body
+          .replace(/```[\s\S]*?```/g, ' ')
+          .replace(/`[^`]*`/g, ' ')
+          .replace(/<[^>]*>/g, ' ')
+          .replace(/!\[[^\]]*\]\([^)]*\)/g, ' ')
+          .replace(/\[([^\]]*)\]\([^)]*\)/g, '$1')
+          .replace(/[#>*_~\-+=|]+/g, ' ')
+          .replace(/\r?\n/g, ' ')
+          .replace(/\s{2,}/g, ' ')
+          .trim()
 
         return {
           url,
@@ -95,6 +106,7 @@ export default defineLoader<PostData[]>({
           updated,
           wordCount,
           readingTime,
+          plainText,
         }
       })
     )

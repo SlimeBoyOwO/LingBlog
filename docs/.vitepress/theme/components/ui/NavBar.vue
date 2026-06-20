@@ -1,10 +1,14 @@
 <script setup lang="ts">
 import { ref, onMounted, onUnmounted } from 'vue'
 import ThemeToggle from './ThemeToggle.vue'
+import SearchModal from './SearchModal.vue'
 import { useData } from 'vitepress'
 
 const { theme } = useData()
 const navs = theme.value.nav
+
+// --- 搜索模态框 ---
+const showSearch = ref(false)
 
 // --- 原有逻辑 ---
 const isScrolled = ref(false)
@@ -34,9 +38,9 @@ const toggleMobileMenu = () => {
   }
 }
 
-// 简单的搜索占位函数（原代码中未提供，防止报错）
+// 搜索点击处理
 const handleSearchClick = () => {
-  console.log('Search clicked')
+  showSearch.value = true
 }
 
 // 监听窗口大小变化，如果切换回桌面宽，关闭移动菜单
@@ -189,4 +193,7 @@ onUnmounted(() => {
       </div>
     </transition>
   </nav>
+
+  <!-- 搜索模态框 -->
+  <SearchModal v-model="showSearch" />
 </template>
