@@ -126,6 +126,7 @@ import laoZhang from '@/assets/friends/臭老张.jpg'
 import mengLinXi from '@/assets/friends/MeowLynxSea.webp'
 import luoYi from '@/assets/friends/罗伊.jpg'
 import uwa from '@/assets/friends/uwa.jpg'
+import zongDu from '@/assets/friends/总督.jpg'
 
 const { scrollTo } = useScrollTo()
 
@@ -173,6 +174,12 @@ const friendsList = ref<Friend[]>([
     desc: '超聪明全功能的灰色可爱猫娘，超级项目生产妈妈',
     avatar: mengLinXi,
     url: 'https://www.meowdream.cn/',
+  },
+  {
+    name: '总督',
+    desc: '可爱小萝莉，可抱走',
+    avatar: zongDu,
+    url: 'https://www.baidu.com/',
   },
 ])
 </script>
