@@ -1,32 +1,26 @@
 <template>
-  <section
-    id="gallery"
-    class="h-screen w-full flex relative items-center justify-center px-6 snap-start"
-  >
+  <section id="gallery" class="h-screen w-full flex relative items-center justify-center px-6 snap-start">
     <!-- 背景层 -->
-    <div
-      class="absolute inset-0 z-[-2] bg-[url('@/assets/backgrounds/gallery_4.jpg')] bg-cover bg-bottom bg-no-repeat"
-    ></div>
+    <div class="absolute inset-0 z-[-2] bg-[url('@/assets/backgrounds/gallery_4.jpg')] bg-cover bg-bottom bg-no-repeat">
+    </div>
     <div class="container mx-auto h-[80vh] flex">
       <!-- 左侧信息面板 -->
       <div class="w-[40%] pr-12 flex flex-col justify-center">
         <div class="mb-8">
-          <div
-            class="inline-flex items-center px-3 py-1 rounded-full bg-cyan-100/10 border border-cyan-200/30 mb-4"
-          >
+          <div class="inline-flex items-center px-3 py-1 rounded-full bg-cyan-100/10 border border-cyan-200/30 mb-4">
             <div class="w-2 h-2 rounded-full bg-cyan-400 mr-2 animate-pulse"></div>
             <span class="text-cyan-200 text-sm font-medium">绘画初学者</span>
           </div>
 
           <h1 class="font-display text-5xl font-bold text-gray-50 mb-4 leading-tight">
-            小画师的
+            咱的超绝
             <span class="text-transparent bg-clip-text bg-linear-to-r from-cyan-500 to-teal-200">
-              奇喵世界
+              画画作品！
             </span>
           </h1>
 
           <p class="text-pink-50 text-lg leading-relaxed">
-            虽然是一个经常熬夜写代码的码农，但也有想用画笔创作心中所想的小梦想。虽然一直以来只是一个笨蛋萌新，但画画什么的开心就好了嘛！
+            就算是一个经常熬夜写代码的码农，也偶尔想画点满足自己的小玩意的好吧！一直以来只是一个笨蛋萌新，但画画什么的开心就好了嘛！
           </p>
         </div>
 
@@ -34,33 +28,24 @@
         <div class="grid grid-cols-3 gap-6 mb-10">
           <div class="text-center">
             <div class="text-3xl font-bold text-teal-300 mb-1">{{ galleryImages.length }}</div>
-            <div class="text-gray-50 text-sm">展示作品数</div>
+            <div class="text-gray-50 text-sm">展品数量</div>
           </div>
           <div class="text-center">
             <div class="text-3xl font-bold text-teal-300 mb-1">2022</div>
-            <div class="text-gray-50 text-sm">处女作时间</div>
+            <div class="text-gray-50 text-sm">第一次❤</div>
           </div>
           <div class="text-center">
             <div class="text-3xl font-bold text-teal-300 mb-1">兽耳娘</div>
-            <div class="text-gray-50 text-sm">喜欢的题材</div>
+            <div class="text-gray-50 text-sm">偏好类型</div>
           </div>
         </div>
 
         <!-- 创作理念 -->
         <div class="glass-card rounded-2xl p-6 border border-white/40 shadow-lg">
           <h3 class="font-display text-xl font-semibold text-teal-300 mb-3 flex items-center">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              class="lucide lucide-brush-icon lucide-brush mr-2"
-            >
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+              class="lucide lucide-brush-icon lucide-brush mr-2">
               <path d="m11 10 3 3" />
               <path d="M6.5 21A3.5 3.5 0 1 0 3 17.5a2.62 2.62 0 0 1-.708 1.792A1 1 0 0 0 3 21z" />
               <path d="M9.969 17.031 21.378 5.624a1 1 0 0 0-3.002-3.002L6.967 14.031" />
@@ -81,29 +66,21 @@
         <div class="overflow-y-auto no-scrollbar max-h-[78vh] w-full border-b-4 border-cyan-300">
           <!-- columns-2 md:columns-3 lg:columns-4 用于创建瀑布流 -->
           <div class="columns-2 md:columns-2 lg:columns-3 gap-4 space-y-4 mx-auto">
-            <div
-              v-for="(img, i) in galleryImages"
-              :key="i"
-              class="break-inside-avoid relative group rounded-xl overflow-hidden glass-panel hover:z-10 transition-transform duration-300"
-            >
+            <div v-for="(img, i) in galleryImages" :key="i"
+              class="break-inside-avoid relative group rounded-xl overflow-hidden glass-panel hover:z-10 transition-transform duration-300">
               <!-- 模拟不同尺寸图片 -->
-              <img
-                :src="img.src"
+              <img :src="img.src"
                 class="w-full h-auto object-cover transform transition duration-400 group-hover:scale-105"
-                loading="lazy"
-                alt="Gallery Image"
-              />
+                loading="lazy" alt="Gallery Image" />
 
               <div
-                class="absolute top-4 left-4 bg-black/50 backdrop-blur px-3 py-1 rounded-full text-xs font-mono text-cyan-200 border border-cyan-500/30"
-              >
+                class="absolute top-4 left-4 bg-black/50 backdrop-blur px-3 py-1 rounded-full text-xs font-mono text-cyan-200 border border-cyan-500/30">
                 {{ img.year }}
               </div>
 
               <!-- 悬停遮罩 -->
               <div
-                class="absolute inset-0 bg-linear-to-t from-black/75 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4"
-              >
+                class="absolute inset-0 bg-linear-to-t from-black/75 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
                 <div class="text-white">
                   <div class="text-cyan-300 font-display font-bold text-lg mb-1">
                     {{ img.title }}
