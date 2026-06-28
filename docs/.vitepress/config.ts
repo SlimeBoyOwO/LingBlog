@@ -7,6 +7,7 @@ import { computeWordStats } from './theme/utils/text'
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
+  head: [['link', { rel: 'icon', href: '/LingBlog/blog/favicon.ico' }]],
   base: '/LingBlog/blog/',
   cleanUrls: true,
   title: 'Ling Blog',
