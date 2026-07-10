@@ -58,3 +58,4 @@ pnpm run docs:dev
 2. 字体使用的是Blueaka，来自[基沃托斯图书馆](https://kivo.fun/)
 3. 本开源项目展示的画作为本人画作，勿商 QwQ
 4. 样式整体模仿了[Mizuki UI](https://mizuki.mysqil.com/)的设计，感谢原作者的精彩设计。
+5. lingchat-docs部分由@qichenya开发，并顺手强健了[一个小文件](/LingBlog/docs/tutorial/programers-words.md)
