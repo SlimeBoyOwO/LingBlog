@@ -65,8 +65,8 @@ tags:
 | VM     | Virtual Machine                    | 虚拟机               | 主机分身术           |
 | VPS    | Virtual Private Server             | 虚拟专用服务器       | 买服务器准备破产     |
 | VNC    | Virtual Network Console            | 虚拟网络控制台       | 原主机没GUI          |
-| VPN    | Virtual Private Network            | 虚拟专用网络         | 去国外看片           |
-| VPC    | Virtual Private Cloud              | 私有云网络           | 在云上租个保险柜存片 |
+| VPN    | Virtual Private Network            | 虚拟专用网络         | 去国外迫害贞操        |
+| VPC    | Virtual Private Cloud              | 私有云网络           | 在云上租个保险柜存下一次迫害贞操的东西 |
 | WSL    | Windows Subsystem for Linux        | Windows的Linux子系统 | Windows上做Linux开发 |
 | IP     | Internet Protocol                  | 网络协议             | 盒                   |
 | DNS    | Domain Name System                 | 域名系统             | 记得常刷新           |
@@ -74,9 +74,9 @@ tags:
 | HTTPS  | HyperText Transfer Protocol Secure | 安全超文本传输协议   | 不危险网站           |
 | FTP    | File Transfer Protocol             | 文件传输协议         | 传片                 |
 | SSH    | Secure Shell                       | 安全外壳协议         | 链接并安全传片       |
-| TCP    | Transmission Control Protocol      | 传输控制协议         | 你不许不收到         |
-| UDP    | User Datagram Protocol             | 用户数据报协议       | 我发我的你收你的     |
-| SSL    | Secure Sockets Layer               | 安全套接字层         | 加密通道             |
+| TCP    | Transmission Control Protocol      | 传输控制协议         | 收不到就坏掉！         |
+| UDP    | User Datagram Protocol             | 用户数据报协议       | 狠狠地灌注     |
+| SSL    | Secure Sockets Layer               | 安全套接字层         | 加密0721             |
 
 ## 4. 见得不多的缩写词
 
