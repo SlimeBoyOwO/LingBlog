@@ -41,3 +41,5 @@ LingChat文档
 ---
 
 > **提示**：文档首页链接和导航已集成到 LingBlog 侧边栏，可通过顶部导航栏快速访问。
+
+<ContributorsPanel />
