@@ -1,12 +1,6 @@
 <script setup lang="ts">
-import contributors from '../../../../projects/ling-chat/contributors.json'
-
-interface Contributor {
-  name: string
-  role: string
-  description: string
-  link?: string
-}
+import { contributors } from '../../../../projects/ling-chat/contributors'
+import type { Contributor } from '../../../../projects/ling-chat/contributors'
 
 const list: Contributor[] = contributors
 </script>
