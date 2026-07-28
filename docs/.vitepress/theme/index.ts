@@ -11,6 +11,7 @@ import './styles/components/vp-code-group.css'
 import './styles/components/vp-doc.css'
 
 import AplayerWrapper from './components/base/AplayerWrapper.vue'
+import ContributorsPanel from './components/ui/ContributorsPanel.vue'
 
 export default {
   Layout,
@@ -18,5 +19,6 @@ export default {
     app.provide('theme', 'custom')
     app.use(createPinia())
     app.component('AplayerWrapper', AplayerWrapper)
+    app.component('ContributorsPanel', ContributorsPanel)
   },
 } satisfies Theme

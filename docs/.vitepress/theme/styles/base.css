@@ -41,7 +41,7 @@
 
 @layer components {
   .header-decoration {
-    @apply relative pl-4 before:absolute before:left-0 before:top-1/2 before:-translate-y-1/2 before:w-1 before:h-[70%] before:bg-brand before:rounded-md;
+    @apply relative pl-4 before:content-[''] before:absolute before:left-0 before:top-[0.32em] before:w-1 before:h-[0.72em] before:bg-brand before:rounded-md;
   }
 }
 
