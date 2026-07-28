@@ -62,8 +62,8 @@ export const contributors: Contributor[] = [
   },
   {
     name: 'PL',
-    role: '后端架构优化',
-    description: '协助后端架构重构，优化了代码结构和性能',
+    role: '后端架构师',
+    description: '( -  - )',
     link: 'https://github.com/0x00-pl'
   },
   {
@@ -74,9 +74,81 @@ export const contributors: Contributor[] = [
   },
   {
     name: 'uwa',
-    role: '时代弃子',
-    description: '在Python时期负责安装包制作与热更新实现',
-    link: 'https://uwaspace.work'
+    role: '安装包开发者',
+    description: '没点东西，但又想做出点东西的uwa',
+    link: 'https://github.com/myh1011'
+  },
+  {
+    name: '鲸落',
+    role: 'RAG架构',
+    description: '云、二次元和 AI 爱好者',
+    link: 'https://github.com/LtePrince'
+  },
+  {
+    name: '维克扣扣',
+    role: '服务器开发 / 技术顾问',
+    description: '前面忘了，后面忘了，反正是14岁小萝莉',
+    link: 'https://github.com/Vickko'
+  },
+  {
+    name: 'dada',
+    role: '桌宠功能开发',
+    description: '我为什么要介绍自己，这是什么羞耻play',
+    link: 'https://github.com/kono-dada'
+  },
+  {
+    name: '影',
+    role: '修BUG',
+    description: '不在服务区',
+    link: 'https://github.com/SymphonyIceAttack'
+  },
+  {
+    name: 'yukito',
+    role: 'UI设计＆开发',
+    description: '时不时冒出来写个UI',
+    link: 'https://github.com/yukito0209'
+  },
+  {
+    name: '远足',
+    role: 'UI设计＆开发',
+    description: '哈基灵艾草',
+    link: 'https://github.com/523528109'
+  },
+  {
+    name: '喵',
+    role: '前端架构',
+    description: '喵喵喵？',
+    link: 'https://github.com/a2942'
+  },
+  {
+    name: '元初',
+    role: 'vue开发',
+    description: '幻想手搓机娘的摸鱼全栈开发',
+    link: 'https://github.com/metaone01'
+  },
+  {
+    name: '有梦当燃',
+    role: '前端架构',
+    description: '灵灵的御用杯子',
+    link: 'https://github.com/Afiredream'
+  },
+  {
+    name: '柏海',
+    role: 'UI/剧情设计',
+    description: '负责让项目变得橘里橘气',
+    link: 'https://github.com/mori-morichan'
+  },
+  {
+    name: '总督',
+    role: '美术资源',
+    description: '桑丘派硬血奥义-La Sangre！！！',
+    link: 'https://github.com/FinalFlower'
+  },
+  {
+    name: '123',
+    role: 'vits训练师',
+    description: '每秒输出最大为2tokens',
+    link: 'https://github.com/1236850'
   },
   {
     name: '开源社区贡献者',
