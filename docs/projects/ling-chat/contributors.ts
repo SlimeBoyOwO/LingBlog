@@ -74,11 +74,11 @@ export const contributors: Contributor[] = [
   },
   {
     name: 'uwa',
-    role: '安装包开发者',
-    description: '没点东西，但又想做出点东西的uwa',
-    link: 'https://github.com/myh1011'
+    role: '时代弃子',
+    description: '在Python时期负责安装包制作与热更新实现',
+    link: 'https://uwaspace.work'
   },
-  {
+ {
     name: '鲸落',
     role: 'RAG架构',
     description: '云、二次元和 AI 爱好者',
