@@ -105,8 +105,6 @@ npm run preview:all
 | 测试群友 | 测试反馈 | 感谢参与内测、提交 Bug 反馈的每一位用户 |
 | 爱发电赞助者 | 资金支持 | 感谢通过爱发电支持项目的朋友们 |
 
-> LingChat 文档的完整感谢名单存放在 [`docs/projects/ling-chat/contributors.json`](./docs/projects/ling-chat/contributors.json)。
-
 ## 额外注明
 
 1. 本博客使用的背景资源来自网络，请勿商用，如有侵权删。
