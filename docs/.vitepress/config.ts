@@ -49,51 +49,20 @@ export default defineConfig({
       },
       {
         text: 'LingChat文档',
-        items: [
-          { text: '文档首页', link: '/LingBlog/blog/projects/ling-chat/' },
-          { text: '前后端通讯API', link: '/LingBlog/blog/projects/ling-chat/前后端通讯api' },
-          { text: '数据库开发文档', link: '/LingBlog/blog/projects/ling-chat/数据库开发文档' },
-        ],
-      },
-      {
-        text: '用户手册',
-        items: [
-          { text: '介绍', link: '/LingBlog/blog/projects/ling-chat/manual/' },
-          { text: '版本介绍与下载', link: '/LingBlog/blog/projects/ling-chat/manual/deployment/version' },
-          { text: 'Windows部署', link: '/LingBlog/blog/projects/ling-chat/manual/deployment/win' },
-          { text: 'Android部署', link: '/LingBlog/blog/projects/ling-chat/manual/deployment/android' },
-          { text: 'Linux部署', link: '/LingBlog/blog/projects/ling-chat/manual/deployment/linux' },
-          { text: 'RAG系统', link: '/LingBlog/blog/projects/ling-chat/manual/expand/rag' },
-          { text: '语音生成', link: '/LingBlog/blog/projects/ling-chat/manual/expand/voice' },
-          { text: '视觉功能', link: '/LingBlog/blog/projects/ling-chat/manual/expand/vision' },
-          { text: '桌宠', link: '/LingBlog/blog/projects/ling-chat/manual/expand/ling_pet' },
-        ],
-      },
-      {
-        text: '常见问题',
-        items: [
-          { text: '首页', link: '/LingBlog/blog/projects/ling-chat/faq/' },
-          { text: '排障速查', link: '/LingBlog/blog/projects/ling-chat/faq/tech/error' },
-          { text: '安卓部署排障', link: '/LingBlog/blog/projects/ling-chat/faq/tech/android' },
-          { text: '界面与启动排障', link: '/LingBlog/blog/projects/ling-chat/faq/ui/' },
-          { text: 'Clone后修复指南', link: '/LingBlog/blog/projects/ling-chat/faq/clone' },
-          { text: '联系与支持', link: '/LingBlog/blog/projects/ling-chat/faq/support' },
-        ],
+        items: [{ text: '文档首页', link: '/LingBlog/blog/projects/ling-chat/' }],
       },
       {
         text: '开发文档',
         items: [
-          { text: '介绍', link: '/LingBlog/blog/projects/ling-chat/develop/' },
           { text: '开发流程', link: '/LingBlog/blog/projects/ling-chat/develop/dev_process' },
-          { text: 'Windows开发环境', link: '/LingBlog/blog/projects/ling-chat/develop/windows_dev' },
-          { text: 'Linux开发环境', link: '/LingBlog/blog/projects/ling-chat/develop/linux_dev' },
-          { text: 'Style-Bert-VITS2训练', link: '/LingBlog/blog/projects/ling-chat/develop/Style-Bert-VITS2模型训练教程' },
-          { text: '项目结构', link: '/LingBlog/blog/projects/ling-chat/develop/project_structure' },
-          { text: '剧情创作指南', link: '/LingBlog/blog/projects/ling-chat/develop/story_guide' },
-          { text: '人物创建指南', link: '/LingBlog/blog/projects/ling-chat/develop/character_guide' },
-          { text: '开发指南', link: '/LingBlog/blog/projects/ling-chat/develop/dev_guide' },
-          { text: 'LingPal使用指南', link: '/LingBlog/blog/projects/ling-chat/develop/pal_instruct' },
-          { text: '后端代码结构', link: '/LingBlog/blog/projects/ling-chat/develop/backend' },
+          {
+            text: 'Style-Bert-VITS2训练',
+            link: '/LingBlog/blog/projects/ling-chat/develop/Style-Bert-VITS2模型训练教程',
+          },
+          {
+            text: '人物创建指南',
+            link: '/LingBlog/blog/projects/ling-chat/develop/character_guide',
+          },
         ],
       },
       {
