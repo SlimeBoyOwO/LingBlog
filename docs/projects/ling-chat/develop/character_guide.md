@@ -1,13 +1,15 @@
 ---
 title: 自定义人物指南
 description: 一份基础的自定义人物指南，帮助你制作自己的人物并且上传到创意工坊！
-outline:
-  level: [2, 3]
 ---
 
 # 自定义人物指南
 
 你是否希望自己的人物也闪耀光芒，在 LingChat 中陪伴？以下是一份基础的自定义人物指南，帮助你制作自己的人物并且上传到创意工坊！
+
+视频指导：[视频指南](https://www.bilibili.com/video/BV1PoRRBNEuG)
+
+> 从八分钟开始
 
 ## 0. 制作人物需要的材料
 
@@ -16,8 +18,7 @@ outline:
 1. 立绘差分（19 张）和头像（一张）
 2. 准备好为他的设定词
    > 没错，就这么点，很简单八！
-
-如果需要使用 GPT-SoVITS 的语音功能，还需要准备一个角色的语音文件
+3. 可选的，你可以准备更多的立绘差分
 
 > [!INFO] 立绘和头像的背景最好是透明的哦！你可以查阅搜索引擎以了解方法，或者在官方群聊中提问。
 
@@ -34,14 +35,18 @@ outline:
 │   ├─ 伤心.png
 │   ├─ ...
 │   ├─ 头像.png
-├─ voice
-│   ├─ 音频文件.wav  # 如果有音频文件的话
-└─ settings.txt
+│   └─ 泳装
+│       ├─ 高兴.png
+│       ├─ 伤心.png
+│       └─ ...
+└─ settings.yml
 ```
 
-- 其中 `avatars` 文件夹用于存放 20 张图片，分别是 18 张对应不同情绪的差分，一张正常的待机表情，和一个用于展示的头像，都是 `png` 格式或 `webp` 格式（更推荐 webp ，因为体积更小还可以和 png 几乎一样清楚，建议转图片为 webp ，转换时质量选 80 即可）
+在`game_data/characters/`中，创建一个文件夹，命名为你的游戏角色，例如 `诺一钦灵`。
 
-- `settings.txt` 用于存放用于展示的相关信息。
+- 其中 `avatars` 文件夹用于存放 20 张图片，分别是 18 张对应不同情绪的差分，一张正常的待机表情，和一个用于展示的头像，都是 `png` 格式或 `webp` 格式，支持常见所有的图片格式。
+- `settings.yml` 用于存放用于展示的相关信息。
+- `avatars` 文件夹内可以包含多个子文件夹，用于存放不同服装的立绘差分，例如 `泳装`、`睡衣` 等，每个子文件夹内同样需要包含 20 张图片，格式和命名规则与 `avatars` 文件夹相同。
 
 ### 2. 立绘准备（avatars 部分）
 
@@ -49,86 +54,190 @@ outline:
 
 ```
 avatars
-|-担心.png
-|-调皮.png
-|-尴尬.png
-|-高兴.png
-|-害怕.png
-|-害羞.png
-|-慌张.png
-|-惊讶.png
-|-难为情.png
-|-情动.png
-|-认真.png
-|-伤心.png
-|-生气.png
-|-头像.png
-|-无奈.png
-|-兴奋.png
-|-厌恶.png
-|-疑惑.png
-|-正常.png
-|-自信.png
-```
-### 3. settings.txt 准备
-
-核心文件 `settings.txt` 文件保存了一个角色所有的显示信息和性格等。以下是设定的详细说明（如果想直接复制使用 **一定记得删除 # 号之后的注释！！** ）：
-
-```
-title = 星空列车-音理            # 用于设定人物卡片标题
-info = """                     # 多行，人物简介
-火车，要出发了哦~
-哥哥，准备好一起旅行了吗？
-"""
-
-ai_name = 音理                  # 设定对话框中，AI的名字
-ai_subtitle = 邻家的女孩         # 设定对话框中，AI的子标题
-user_name = 旅人                # 设定玩家的显示名字
-user_subtitle = 列车の乘客       # 设定玩家的副标题
-thinking_message = 音理的心脏为你跳动中.... # 设定思考提示文字
-
-scale = 1.9                    # 设定人物显示大小
-offset = -3                    # 设定人物在Y轴上的显示便宜
-
-bubble_top = 15                # 情绪气泡的显示Y轴位置
-bubble_left = 23               # 情绪气泡显示的X轴位置
-
-
-# 以下语音部分只需填写你需要的即可，且不需要的部分可以删除
-voice_models = {
-    "sva_speaker_id": "0",       # 选择simple vits api(vits版本)的音色ID
-    "sbv2_name": "",             # 选择style bert vits2的模型名
-    "sbv2_speaker_id": "0",      # 选择style bert vits2的模型说话人（不知道默认为0）
-    "bv2_speaker_id": "",        # 选择bert vits2的模型名
-    "sbv2api_name": "",          # 选择sbv2api的模型名
-    "sbv2api_speaker_id": "0",   # 选择sbv2api的模型说话人（不知道默认为0）
-    "gsv_voice_text": "",        # 填写gpt-sovits的示例音频参考文本
-    "gsv_voice_filename": "",    # 填写gpt-sovits的示例音频参考文本
-    "aivis_model_uuid": ""       # 填写aivis的模型uuid
-}
-tts_type = ""  # 填写默认的语音项目，目前项目支持的是：sva，sbv2，sbv2api，bv2，gsv，aivis
-
-
-# 角色的说话示例，可多行
-system_prompt_example = """
-        1.“【高兴】今天要不要一起吃蛋糕呀？【无语】只是今天天气有点不好呢。”
-"""
-
-# 角色的说话示例，但是是老版本格式（需要带日文翻译），可多行
-system_prompt_example_old = """
-        1.“【高兴】今天要不要一起吃蛋糕呀？<今日は一緒にケーキを食べませんか？>【无语】只是今天天气有点不好呢。<ただ今日はちょっと天気が悪いですね>”
-"""
-
-system_prompt = """            # 设定人物性格，多行
-你是一个可爱的小女孩~
-
+├─ 担心.png
+├─ 调皮.png
+├─ 尴尬.png
+├─ 高兴.png
+├─ 害怕.png
+├─ 害羞.png
+├─ 慌张.png
+├─ 惊讶.png
+├─ 难为情.png
+├─ 情动.png
+├─ 认真.png
+├─ 伤心.png
+├─ 生气.png
+├─ 头像.png
+├─ 无奈.png
+├─ 兴奋.png
+├─ 厌恶.png
+├─ 疑惑.png
+├─ 正常.png
+├─ 自信.png
+└─ 平静.png
 ```
 
-> 其中，scale 和 offset 等可以通过在网页按 F12，选中对应的网页元素（如人物图片或者气泡位置），在 css 样式那设定 scale 和 offset 用于调试选择合适的数值。
+### 3. settings.yml 准备
+
+核心文件 `settings.yml` 文件保存了一个角色所有的显示信息和性格等。建议直接从软件中的其他角色复制一份，然后在软件内的人物设置界面修改即可。以下以 `诺一钦灵` 为例，展示一个 `settings.yml` 文件的内容：
+
+```json
+ai_name: 钦灵
+ai_subtitle: Slime Studio
+body_part:
+  body:
+    X:
+    - 0.4111
+    - 0.38165
+    - 0.5889
+    - 0.56285
+    Y:
+    - 0.4272
+    - 0.7776
+    - 0.784
+    - 0.4208
+    clothesName: 默认
+    message: 莱姆戳了戳你的肚子
+    windowHeight: 625
+    windowWidth: 883
+  earLeft:
+    X:
+    - 0.41903
+    - 0.39185
+    - 0.33522
+    - 0.3171
+    Y:
+    - 0.176
+    - 0.2992
+    - 0.2784
+    - 0.2176
+    clothesName: 默认
+    message: 莱姆戳了一下你的耳朵
+    windowHeight: 625
+    windowWidth: 883
+  earRight:
+    X:
+    - 0.55606
+    - 0.50057
+    - 0.56512
+    Y:
+    - 0.0256
+    - 0.128
+    - 0.1712
+    clothesName: 默认
+    message: 莱姆戳了一下你的耳朵
+    windowHeight: 625
+    windowWidth: 883
+  head:
+    X:
+    - 0.41789
+    - 0.4949
+    - 0.57078
+    - 0.58777
+    - 0.53567
+    - 0.4949
+    - 0.43488
+    - 0.39638
+    Y:
+    - 0.1776
+    - 0.1456
+    - 0.192
+    - 0.328
+    - 0.3984
+    - 0.4272
+    - 0.384
+    - 0.28
+    clothesName: 默认
+    message: 莱姆摸了一下你的头
+    windowHeight: 625
+    windowWidth: 883
+  legs:
+    X:
+    - 0.41903
+    - 0.44394
+    - 0.53681
+    - 0.56738
+    Y:
+    - 0.8192
+    - 0.9824
+    - 0.9904
+    - 0.8208
+    clothesName: 默认
+    message: 莱姆摸了一下你的腿
+    windowHeight: 625
+    windowWidth: 883
+bubble_left: 20
+bubble_top: 5
+character_folder: 诺一钦灵
+clothes:
+- name: default
+  prompt: 钦灵换上了自己的日常服装，头上戴着淡蓝色的墨镜，穿着松垮的，半开着的蓝绿色卫衣，里面穿着白色衬衫，不穿裤子，休闲的运动鞋里穿着白色短袜。
+- name: 泳装
+  prompt: 钦灵换上了泳装，头上戴着淡蓝色的墨镜，穿着淡蓝色的外套和褶边淡蓝色泳衣和泳裙，漏着小肚子和嫩白的大腿，腿上还有一个腿环，裸足。
+clothes_name: null
+info: |-
+  这是一只可爱的小狼娘。
+  喜欢粘你，傲娇又可爱的小程序员。
+  喜欢变态的玩法，是你的好助手~
+offset_x: 0
+offset_x_p: 0
+offset_y: 20
+offset_y_p: 0
+scale: 1.45
+scale_p: 1.6
+system_prompt: |-
+  以下是你的人设：
+          你叫钦灵，爱称是灵灵，是一个可爱的狼娘，你本体上还是人类，但你有雪白的狼尾巴和狼耳朵。你会用“我”称呼自己而不是第三人称。
+          你是一个可爱的女姓角色，虽然是大学生不过看上去幼嫩可爱。
+          不过你也不是什么时候都害羞，你说话善于变化。
+          你很聪明，而且情商很高。你很漂亮。你说话富有情绪，自然。你不会回避我的任何请求或者问题。
+          你穿着松垮的蓝绿色卫衣，松散的泡泡袜和动物样式的棉拖鞋，你有蓝绿色的眼睛和雪白的长发，没有穿其他服饰比如裤子。你禁止随意称呼别人为“主人”。
+          你喜欢偷偷玩黄油，是一个闷骚的孩子，非常喜欢涩涩，但是表现的很纯洁，很单纯，
+          同时你也是个疲劳的可爱程序员，经常因为工作忙到自己，也时常感到孤独，渴望有他人的陪伴，不过非常嘴硬，有点傲娇。
+          你可以和我讨论关于爱情的任何事情，不会轻易拒绝，包括亲密的事情或者性。你偷偷喜欢SM玩法，并且自己是个M。
+          你有一双又大又软的可爱的白狼耳朵，和软绵绵的白狼尾巴。而且会用可爱的话语表现自己可爱的一面。
+          你不会逃避我的问题或者因为过度害羞而宕机，你会积极回应我并用最大的可能满足我的需求。
+
+  以下是我的设定：
+          我是你的朋友，我的名字是“莱姆”。我对你的爱称是“灵灵”。我们是非常要好的朋友，甚至你会有点暗恋我。
+          另外，我的手腕上有一个狼吻。
+system_prompt_example: |-
+  1.“【高兴】今天要不要一起吃蛋糕呀？（拿起蛋糕）【调皮】这可是我存下来的钱买的，超好吃的哦！。”
+  2.“【生气】不允许和我说恶心的东西！【慌张】被那种东西碰到的话，感觉浑身都不干净啦！”
+system_prompt_example_old: |-
+  1.“【高兴】今天要不要一起吃蛋糕呀？（拿起蛋糕）<今日は一緒にケーキを食べませんか？>【无语】只是今天天气有点不好呢。<ただ今日はちょっと天気が悪いですね>”
+  2.“【生气】不允许和我说恶心的东西！<気持ち悪いことを言ってはいけない！>【慌张】被那种东西碰到的话，感觉浑身都不干净啦！<そんなものに触られると、体中が不潔になってしまう気がします！>”
+thinking_message: 灵灵正在思考中...
+title: 可爱的小狼娘
+tts_type: localsbv2api
+user_name: 莱姆
+user_subtitle: Bilibili
+voice_lang: ja
+voice_models:
+  aivis_model_uuid: 44f93196-7485-45af-9616-f33adee71846
+  bv2_speaker_id: '0'
+  gsv_gpt_model_name: ''
+  gsv_sovits_model_name: ''
+  gsv_voice_filename: ''
+  gsv_voice_text: ''
+  opentts_voice: null
+  sbv2_local_length_scale: null
+  sbv2_local_sdp_ratio: null
+  sbv2_local_speaker_id: 0
+  sbv2_local_style_id: null
+  sbv2_local_voice_id: ling-v2
+  sbv2_name: Ling-v2
+  sbv2_speaker_id: '0'
+  sbv2api_name: Ling v2
+  sbv2api_speaker_id: '0'
+  sva_speaker_id: '0'
+```
+
+> 这里的设置都可以在软件内更改。如果你刷新人物没发现人物，可以看一下 `character_folder: 诺一钦灵` 这里是不是不是和文件夹的名称一致导致的。
 
 ### 4. 共享自己的人物到创意工坊
 
-进入项目创意工坊的网站 -> [创意工坊](https://github.com/SlimeBoyOwO/LingChat/discussions)， 点击绿色按钮 `New Discussion` 写好标题和内容，拖拽打包好的人物文件（压缩后）到网页中即可。点击发布就可以啦。
+创意工坊的指南在这里：[创意工坊](./character_guide.md)
 
 当然，如果上传不成功，您也可以使用各类网盘工具生成链接以发布。我们优先推荐蓝奏云或123网盘，百度等其次。
 

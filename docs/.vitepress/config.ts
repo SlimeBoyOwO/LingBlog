@@ -63,6 +63,14 @@ export default defineConfig({
             text: '人物创建指南',
             link: '/LingBlog/blog/projects/ling-chat/develop/character_guide',
           },
+          {
+            text: 'TTS 使用指南',
+            link: '/LingBlog/blog/projects/ling-chat/develop/tts_guide',
+          },
+          {
+            text: '创意工坊指南',
+            link: '/LingBlog/blog/projects/ling-chat/develop/creative_factory',
+          },
         ],
       },
       {
