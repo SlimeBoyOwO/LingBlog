@@ -10,8 +10,5 @@ description: 介绍LingChat开发的相关事宜，包括流程，项目结构�
 来选择你需要的内容查看吧
 
 - [开发流程](./dev_process.md)
-- [项目结构与实现概述](./project_structure.md)
-- [Windows 开发环境搭建](./windows_dev.md)
-- [剧本编写指南（测试版）](./story_guide.md)
 - [人物卡制作指南](./character_guide.md)
 - [Style-Bert-VITS2模型训练教程](./Style-Bert-VITS2模型训练教程.md)
