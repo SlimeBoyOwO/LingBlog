@@ -228,7 +228,8 @@ C:\Users\NoiQ\Desktop\GPT-SoVITS-v2pro-20250604-nvidia50\SoVITS_weights_v2Pro\�
 
 ## 模型下载和社区贡献
 
-- 官方模型下载地址：https://www.modelscope.cn/organization/lingchat-research-studio（我们未来会添加更多的人物语音）
+- 官方模型下载地址：https://www.modelscope.cn/organization/lingchat-research-studio
+（我们未来会添加更多的人物语音）
 - 模型训练教程：https://slimeboyowo.github.io/LingBlog/blog/projects/ling-chat/develop/Style-Bert-VITS2%E6%A8%A1%E5%9E%8B%E8%AE%AD%E7%BB%83%E6%95%99%E7%A8%8B
 - 社区模型分享：https://github.com/SlimeBoyOwO/LingChat/discussions
 
