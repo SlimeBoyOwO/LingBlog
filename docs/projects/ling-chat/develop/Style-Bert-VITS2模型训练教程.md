@@ -7,9 +7,13 @@ description: 了解如何训练一个Style-Bert-VITS2 模型用于语音合成
 
 > 在使用本教程之前，请确保已经正确部署 Style-Bert-VITS2，本训练参考流程以 Windows 系统为出发，但操作方法全平台通用
 
-## Step 1 数据集的准备
+
+## Step 1 数据集和训练包的准备
 
 Style-Bert-VITS2 的数据集要求你准备<🎹 音频数据>和<🖊 文本数据>
+
+下载训练包：https://www.modelscope.cn/models/lingchat-research-studio/Style-Bert-VITS2-FULL
+
 
 ### 🎹 音频数据的要求
 
