@@ -35,7 +35,7 @@ AMD 显卡使用社区维护的一键安装器：[LingChat-IndexTTS-AMD-Installe
 
 ### 验证
 
-浏览器打开 `http://127.0.0.1:9880/health`，返回 `status: ok` 即服务器就绪。
+浏览器打开 `http://127.0.0.1:9880/health`，返回 `status: ok` 即服务器就绪；响应还会列出当前模型版本、情绪模式与按 `id` 排序的音色文件。
 
 ### 其他说明
 
@@ -52,6 +52,8 @@ AMD 显卡使用社区维护的一键安装器：[LingChat-IndexTTS-AMD-Installe
 ```bash
 git clone https://github.com/index-tts/index-tts.git
 cd index-tts
+# 服务端补丁当前锁定并验证于该提交，避免上游变更导致补丁锚点失效
+git checkout 4f8792ff120cd3ea470dd511e997a17c86cddd10
 uv sync   # 或按官方 README 使用其他包管理器
 ```
 
@@ -60,28 +62,29 @@ uv sync   # 或按官方 README 使用其他包管理器
 HuggingFace（国际网络）：
 
 ```bash
-hf download IndexTeam/IndexTTS-2.5 --local-dir=checkpoints
+hf download IndexTeam/IndexTTS-2.5 --local-dir=checkpoints-2.5
 ```
 
 ModelScope（国内网络）：
 
 ```bash
-modelscope download --model IndexTeam/IndexTTS-2.5 --local_dir checkpoints
+modelscope download --model IndexTeam/IndexTTS-2.5 --local_dir checkpoints-2.5
 ```
 
 模型地址：[HuggingFace](https://huggingface.co/IndexTeam/IndexTTS-2.5) / [ModelScope](https://modelscope.cn/models/IndexTeam/IndexTTS-2.5)
 
 ### 3. 启动服务
 
-- 只想本地体验：运行官方 WebUI（`uv run webui.py`）即可，与 LingChat 无关。
-- 要对接 LingChat：从[安装器仓库](https://github.com/sdfsfsk/LingChat-IndexTTS-AMD-Installer)的 `server/` 目录取 `server_indextts.py` 放到 index-tts 源码根目录，补充安装服务端依赖后运行：
+- 只想本地体验：运行 `uv run webui.py --version 2.5 --model_dir checkpoints-2.5` 即可，与 LingChat 无关。
+- 要对接 LingChat：从[安装器仓库](https://github.com/sdfsfsk/LingChat-IndexTTS-AMD-Installer)复制 `server/server_indextts.py` 到 index-tts 源码根目录，并复制 `scripts/Apply-RepoAmdCompat.py`；当前服务端的可调扩散步数与 BigVGAN 精度参数依赖该补丁，因此不能只复制服务端脚本。
 
 ```bash
 uv pip install fastapi uvicorn soundfile
+uv run python Apply-RepoAmdCompat.py .
 uv run python server_indextts.py
 ```
 
-> 注：该服务端脚本与 AMD 安装器共用同一份代码，模型版本通过环境变量 `INDEXTTS_VERSION` 切换（默认 `2.5`），默认监听 `127.0.0.1:23987`，可用 `INDEXTTS_PORT` 改端口。此路径在 NVIDIA 上未经广泛验证，遇到问题欢迎到仓库提 issue。
+> 注：该服务端脚本与 AMD 安装器共用同一份代码，模型版本通过环境变量 `INDEXTTS_VERSION` 切换（默认 `2.5`），默认读取 `checkpoints-2.5` 并监听 `127.0.0.1:23987`，可用 `INDEXTTS_CHECKPOINTS` 与 `INDEXTTS_PORT` 覆盖。此路径在 NVIDIA 上未经广泛验证，遇到问题欢迎到仓库提 issue。
 
 ## 与 LingChat 对接（两种方式通用）
 
@@ -90,7 +93,7 @@ uv run python server_indextts.py
 2. 打开 **设置 → 角色 → 语音设置**：
    - `TTS 类型`选择 `indextts2`
    - `语音语言`按内容选择：`zh` 中文 / `ja` 日语 / `en` 英语等（2.5 起支持多语言）
-3. 把参考音频（wav/mp3/flac/ogg，建议 15 秒以内、干净单人说话）放进服务器的 `voices` 目录即成为音色预设，按文件名排序，序号即预设 `id`（从 0 开始）。
+3. 把参考音频（wav/mp3/flac/ogg，建议 15 秒以内、干净单人说话）放进服务器的 `voices` 目录即成为音色预设，按文件名排序，序号即预设 `id`（从 0 开始）；在角色语音设置的 `IndexTTS 说话人 ID`（配置键 `voice_models.indextts_speaker_id`）中选择对应编号。
 4. 保存后回到聊天界面，角色就会用克隆的音色说话了；对话情绪会自动映射到语音语气。
 
 ## 音色隐私与许可
@@ -103,3 +106,5 @@ uv run python server_indextts.py
 - IndexTTS 官方仓库：<https://github.com/index-tts/index-tts>
 - AMD 一键安装器：<https://github.com/sdfsfsk/LingChat-IndexTTS-AMD-Installer>
 - IndexTTS-2.5 模型：[HuggingFace](https://huggingface.co/IndexTeam/IndexTTS-2.5) / [ModelScope](https://modelscope.cn/models/IndexTeam/IndexTTS-2.5)
+
+
