@@ -52,8 +52,6 @@ AMD 显卡使用社区维护的一键安装器：[LingChat-IndexTTS-AMD-Installe
 ```bash
 git clone https://github.com/index-tts/index-tts.git
 cd index-tts
-# 服务端补丁当前锁定并验证于该提交，避免上游变更导致补丁锚点失效
-git checkout 4f8792ff120cd3ea470dd511e997a17c86cddd10
 uv sync   # 或按官方 README 使用其他包管理器
 ```
 
@@ -76,15 +74,14 @@ modelscope download --model IndexTeam/IndexTTS-2.5 --local_dir checkpoints-2.5
 ### 3. 启动服务
 
 - 只想本地体验：运行 `uv run webui.py --version 2.5 --model_dir checkpoints-2.5` 即可，与 LingChat 无关。
-- 要对接 LingChat：从[安装器仓库](https://github.com/sdfsfsk/LingChat-IndexTTS-AMD-Installer)复制 `server/server_indextts.py` 到 index-tts 源码根目录，并复制 `scripts/Apply-RepoAmdCompat.py`；当前服务端的可调扩散步数与 BigVGAN 精度参数依赖该补丁，因此不能只复制服务端脚本。
+- 要对接 LingChat：从[安装器仓库](https://github.com/sdfsfsk/LingChat-IndexTTS-AMD-Installer)复制 `server/server_indextts.py` 到 index-tts 源码根目录。服务端会自动检测是否存在安装器的 AMD 性能补丁；未打补丁时使用 IndexTTS 官方默认推理参数，不影响基本合成。
 
 ```bash
 uv pip install fastapi uvicorn soundfile
-uv run python Apply-RepoAmdCompat.py .
 uv run python server_indextts.py
 ```
 
-> 注：该服务端脚本与 AMD 安装器共用同一份代码，模型版本通过环境变量 `INDEXTTS_VERSION` 切换（默认 `2.5`），默认读取 `checkpoints-2.5` 并监听 `127.0.0.1:23987`，可用 `INDEXTTS_CHECKPOINTS` 与 `INDEXTTS_PORT` 覆盖。此路径在 NVIDIA 上未经广泛验证，遇到问题欢迎到仓库提 issue。
+> 注：该服务端脚本与 AMD 安装器共用同一份代码，模型版本通过环境变量 `INDEXTTS_VERSION` 切换（默认 `2.5`），默认读取 `checkpoints-2.5` 并监听 `127.0.0.1:23987`，可用 `INDEXTTS_CHECKPOINTS` 与 `INDEXTTS_PORT` 覆盖。安装器的可调扩散步数、单 beam 和 BigVGAN FP16 属于可选性能补丁；非 AMD 路径目前未经广泛验证，遇到问题欢迎到仓库提 issue。
 
 ## 与 LingChat 对接（两种方式通用）
 
@@ -106,5 +103,4 @@ uv run python server_indextts.py
 - IndexTTS 官方仓库：<https://github.com/index-tts/index-tts>
 - AMD 一键安装器：<https://github.com/sdfsfsk/LingChat-IndexTTS-AMD-Installer>
 - IndexTTS-2.5 模型：[HuggingFace](https://huggingface.co/IndexTeam/IndexTTS-2.5) / [ModelScope](https://modelscope.cn/models/IndexTeam/IndexTTS-2.5)
-
 
