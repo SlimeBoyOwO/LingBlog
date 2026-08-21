@@ -16,7 +16,7 @@ LingChat 支持非常多的语音引擎。`内置 TTS（本地引擎）`是现�
 
 这两个的生态都非常完善，社区中有很多有关这两个语音引擎的模型。
 
-其他支持的语音引擎包括：`Simple Vits API`，`Style Bert Vits 2 API`，`Bert Vits 2`，`Fish V2`，`OpenTTS`，`aivis`，`indexTTS（可能）`
+其他支持的语音引擎包括：`Simple Vits API`，`Style Bert Vits 2 API`，`Bert Vits 2`，`Fish V2`，`OpenTTS`，`aivis`，`IndexTTS`（教程见[IndexTTS 语音合成](./IndexTTS语音教程)）
 
 内置 TTS 与外部 TTS 引擎可以同时使用，详细说明见下文 [角色语音设置](#role-voice) 章节。
 

@@ -68,6 +68,10 @@ export default defineConfig({
             link: '/LingBlog/blog/projects/ling-chat/develop/tts_guide',
           },
           {
+            text: 'IndexTTS 教程',
+            link: '/LingBlog/blog/projects/ling-chat/develop/IndexTTS语音教程',
+          },
+          {
             text: '创意工坊指南',
             link: '/LingBlog/blog/projects/ling-chat/develop/creative_factory',
           },
