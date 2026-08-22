@@ -558,10 +558,10 @@ events:
 
 #### 4.2 示例 DLC：《第七个测试剧本》
 
-一个原创 meta 恐怖剧本 DLC（多周目、5 结局，DDLC 风格崩坏演出），可以直接拿来体验或作为打包参考：
+一个原创 meta 恐怖剧本 DLC（四幕、29 章、双结局，含 DDLC 风格崩坏演出），可以直接拿来体验或作为打包参考：
 
 - 仓库：<https://github.com/sdfsfsk/LingChat-DLC-seventh-test-script>
-- 下载：[v1.0.0 zip](https://github.com/sdfsfsk/LingChat-DLC-seventh-test-script/releases/download/v1.0.0/%E7%AC%AC%E4%B8%83%E4%B8%AA%E6%B5%8B%E8%AF%95%E5%89%A7%E6%9C%AC-v1.0.0.zip)
+- 下载：[最新发布版](https://github.com/sdfsfsk/LingChat-DLC-seventh-test-script/releases/latest)
 - ⚠️ 强烈恐怖演出，含突脸惊吓与自杀暗示内容，建议 18 岁以上游玩
 
 #### 4.3 把你的剧本打包成 DLC
@@ -588,3 +588,24 @@ events:
 - `editor_locked: true`：剧本在剧本编辑器中锁定不可编辑（适合含有编辑器尚不支持的特殊事件的剧本）。
 - `content_warning: horror`：进入前弹出内容警告确认框。
 - `persistent_vars`：声明跨局记忆变量后，剧本列表会自动出现「重置记忆」按钮。
+
+#### 4.4 高级写诗事件兼容性
+
+[#677](https://github.com/SlimeBoyOwO/LingChat/pull/677) 的 `poem_game` 事件支持显式 `mode`，DLC 不再需要根据 `playthrough` 猜测界面状态：
+
+```yaml
+- type: poem_game
+  rounds: 20
+  wordListPath: poem_words.yaml
+  resultVar: poem_tone
+  mode: act2
+  glitch: true
+```
+
+- `mode: normal`：普通三倾向写诗界面。
+- `mode: act2`：隐藏已退场角色的贴纸，并在结算时排除对应倾向。
+- `mode: act2_final`：在 `act2` 基础上启用损坏计数器与屏外异常贴纸演出。
+- `glitch: true`：允许写诗词位按引擎规则出现污染词；建议在词库中提供 `glitch_words`。
+- 普通词在一局内按“已展示即移出”处理；20 轮、每轮 10 个选项时，建议准备 **200 个唯一普通词**，避免小词库耗尽后回填。
+
+使用这些扩展字段时，请在 `dlc.json` 的 `min_engine` 中填写实际需要的 LingChat 最低版本。
