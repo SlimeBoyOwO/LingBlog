@@ -68,6 +68,10 @@ export default defineConfig({
             link: '/LingBlog/blog/projects/ling-chat/develop/tts_guide',
           },
           {
+            text: '语音克隆使用指南',
+            link: '/LingBlog/blog/projects/ling-chat/develop/cosyvoice_guide',
+          },
+          {
             text: 'IndexTTS 教程',
             link: '/LingBlog/blog/projects/ling-chat/develop/IndexTTS语音教程',
           },
