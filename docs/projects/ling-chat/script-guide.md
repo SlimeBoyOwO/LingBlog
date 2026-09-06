@@ -537,3 +537,75 @@ events:
 创意工坊就是 LingChat 项目的 Discusison 区域，链接：[LingChat创意工坊](https://github.com/SlimeBoyOwO/LingChat/discussions)
 
 点击右上角的 `New Discussion`，上传剧本文件（太大的话可以通过网盘）和自己的介绍即可。
+
+### 四、剧本 DLC 包：下载、安装与打包
+
+除了创意工坊的文件夹形式，剧本还可以打包成 **DLC 包**（一个 zip 文件）分发——玩家不需要手动解压拷贝，游戏内一键导入即可游玩。
+
+> [!NOTE] 引擎版本要求
+> DLC 识别功能由 [LingChat#677](https://github.com/SlimeBoyOwO/LingChat/pull/677) 引入。在该 PR 合并发版之前，需要使用包含该功能的构建才能看到「DLC 管理」入口。
+
+#### 4.1 安装 DLC 包
+
+1. 下载作者发布的 DLC zip（**无需解压**）。
+2. 打开 **游戏配置 → 高级设置 → DLC 管理**。
+3. 点击「添加 DLC 包（zip）」，选择下载的 zip 文件。
+4. 识别成功后即刻可玩：剧本会直接出现在剧本列表中，主菜单右下角也会显示「已识别 DLC」小字提示。
+5. 在 DLC 管理页可以一键「卸载」（内置剧本不受影响，只有 DLC 包能被卸载）。
+
+> [!WARNING] 安全提示
+> DLC 是第三方剧本包，内容未经审核，可能包含恐怖、惊吓或令人不适的演出。请只安装来自可信来源的 DLC 包。
+
+#### 4.2 示例 DLC：《第七个测试剧本》
+
+一个原创 meta 恐怖剧本 DLC（四幕、29 章、双结局，含 DDLC 风格崩坏演出），可以直接拿来体验或作为打包参考：
+
+- 仓库：<https://github.com/sdfsfsk/LingChat-DLC-seventh-test-script>
+- 下载：[最新发布版](https://github.com/sdfsfsk/LingChat-DLC-seventh-test-script/releases/latest)
+- ⚠️ 强烈恐怖演出，含突脸惊吓与自杀暗示内容，建议 18 岁以上游玩
+
+#### 4.3 把你的剧本打包成 DLC
+
+1. 确保剧本目录里有 `story_config.yaml`。
+2. 可选：在目录里放一份 `dlc.json` 清单（缺省时导入会自动补写）：
+
+```json
+{
+  "name": "我的剧本",
+  "version": "1.0.0",
+  "author": "你的名字",
+  "description": "一句话介绍",
+  "min_engine": "0.5.0",
+  "homepage": "https://你的仓库地址"
+}
+```
+
+3. 把整个剧本目录打成 zip（zip 里可以是平铺的文件，也可以包一层同名文件夹）。
+4. 发布 zip（Release / 网盘均可），玩家按 4.1 导入即可。
+
+其他实用声明（写在 `story_config.yaml` 里）：
+
+- `editor_locked: true`：剧本在剧本编辑器中锁定不可编辑（适合含有编辑器尚不支持的特殊事件的剧本）。
+- `content_warning: horror`：进入前弹出内容警告确认框。
+- `persistent_vars`：声明跨局记忆变量后，剧本列表会自动出现「重置记忆」按钮。
+
+#### 4.4 高级写诗事件兼容性
+
+[#677](https://github.com/SlimeBoyOwO/LingChat/pull/677) 的 `poem_game` 事件支持显式 `mode`，DLC 不再需要根据 `playthrough` 猜测界面状态：
+
+```yaml
+- type: poem_game
+  rounds: 20
+  wordListPath: poem_words.yaml
+  resultVar: poem_tone
+  mode: act2
+  glitch: true
+```
+
+- `mode: normal`：普通三倾向写诗界面。
+- `mode: act2`：隐藏已退场角色的贴纸，并在结算时排除对应倾向。
+- `mode: act2_final`：在 `act2` 基础上启用损坏计数器与屏外异常贴纸演出。
+- `glitch: true`：允许写诗词位按引擎规则出现污染词；建议在词库中提供 `glitch_words`。
+- 普通词在一局内按“已展示即移出”处理；20 轮、每轮 10 个选项时，建议准备 **200 个唯一普通词**，避免小词库耗尽后回填。
+
+使用这些扩展字段时，请在 `dlc.json` 的 `min_engine` 中填写实际需要的 LingChat 最低版本。
