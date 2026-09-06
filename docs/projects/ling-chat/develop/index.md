@@ -14,6 +14,7 @@ description: 介绍LingChat开发的相关事宜，包括流程，项目结构�
 - [人物卡制作指南](./character_guide.md)
 - [创意工坊上传指南](./creative_factory.md)
 - [TTS语音引擎指南](./tts_guide.md)
+- [语音克隆使用指南](./cosyvoice_guide.md)
 - [手写剧本指南](../script-guide.md)
 - [剧本事件大全](../script-events.md)
 - [Style-Bert-VITS2模型训练教程](./Style-Bert-VITS2模型训练教程.md)
