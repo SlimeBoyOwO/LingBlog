@@ -103,6 +103,8 @@ export default defineConfig({
           { text: 'Tauri项目踩坑', link: '/LingBlog/blog/tutorial/tauri-tutorial' },
           { text: '程序员缩写词', link: '/LingBlog/blog/tutorial/programers-words' },
           { text: 'RESTful API设计', link: '/LingBlog/blog/tutorial/restful-api-design' },
+          { text: '初级建站指南', link: '/LingBlog/blog/tutorial/website/establish-website' },
+          { text: '中级建站指南', link: '/LingBlog/blog/tutorial/website/https-website' },
         ],
       },
       {
